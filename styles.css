@@ -9,10 +9,17 @@
   --dim: #8e97a7;
   --dim-2: #626c7d;
 
+  /* Sobre el panel oscuro */
   --t-free: #22b85f;
   --t-low: #f5c518;
   --t-mid: #ff7a2f;
   --t-high: #ff4d42;
+
+  /* Sobre el mapa claro: los mismos tonos, bajados para aguantar texto blanco */
+  --m-free: #0f8f45;
+  --m-low: #b07f00;
+  --m-mid: #d4530d;
+  --m-high: #d42419;
 
   --display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
   --body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -20,7 +27,7 @@
 
   --rail-x: 15px;
   --bullet: 30px;
-  --pane: clamp(340px, 46vw, 620px);
+  --pane: clamp(340px, 44vw, 600px);
 }
 
 *,
@@ -47,23 +54,23 @@ a { color: inherit; }
   border-radius: 3px;
 }
 
-/* ─── Hero ─────────────────────────────────────────────────────────── */
+/* ─── Encabezado ───────────────────────────────────────────────────── */
 
 .hero {
   border-bottom: 1px solid var(--rail);
   background:
-    radial-gradient(120% 90% at 8% 0%, #1d2230 0%, transparent 62%),
+    radial-gradient(120% 120% at 8% 0%, #1d2230 0%, transparent 62%),
     var(--night);
 }
 
 .hero__inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3.5rem) clamp(1.75rem, 3vw, 2.5rem);
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3.5rem) clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .eyebrow {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.1rem;
   font-family: var(--mono);
   font-size: 0.72rem;
   letter-spacing: 0.16em;
@@ -83,12 +90,12 @@ a { color: inherit; }
 
 .hero__title-1 {
   display: block;
-  font-size: clamp(3rem, 11vw, 8.5rem);
+  font-size: clamp(2.6rem, 10vw, 8rem);
 }
 
 .hero__title-2 {
   display: block;
-  font-size: clamp(1rem, 3.05vw, 2.35rem);
+  font-size: clamp(0.95rem, 2.85vw, 2.2rem);
   font-weight: 500;
   font-variation-settings: 'wdth' 112;
   letter-spacing: 0.01em;
@@ -96,44 +103,11 @@ a { color: inherit; }
   margin-top: 0.5rem;
 }
 
-.hero__lede {
-  max-width: 46ch;
-  margin: 1.75rem 0 0;
-  font-size: 1.0625rem;
-  font-weight: 300;
-  color: var(--dim);
-}
-
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 clamp(1.75rem, 5vw, 4rem);
-  margin: 2.25rem 0 0;
-}
-
-.stat dt {
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--dim-2);
-}
-
-.stat dd {
-  margin: 0.25rem 0 0;
-  font-family: var(--display);
-  font-weight: 800;
-  font-variation-settings: 'wdth' 100;
-  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-
 .leyenda {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem 1.4rem;
-  margin: 2rem 0 0;
+  margin: 1.9rem 0 0;
   padding: 0;
   list-style: none;
   font-family: var(--mono);
@@ -160,11 +134,11 @@ a { color: inherit; }
 .dot--mid  { background: var(--t-mid); }
 .dot--high { background: var(--t-high); }
 
-/* ─── Split ────────────────────────────────────────────────────────── */
+/* ─── Panel + mapa ─────────────────────────────────────────────────── */
 
 .split {
   display: grid;
-  grid-template-columns: 1fr var(--pane);
+  grid-template-columns: var(--pane) 1fr;
   max-width: 1440px;
   margin: 0 auto;
   align-items: start;
@@ -172,7 +146,7 @@ a { color: inherit; }
 
 .lista-pane {
   min-width: 0;
-  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.25rem, 4vw, 3.5rem) 4rem;
+  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.25rem, 3vw, 2.75rem) 4rem;
 }
 
 .map-pane {
@@ -181,15 +155,20 @@ a { color: inherit; }
   z-index: 10;
   height: 100vh;
   height: 100dvh;
-  background: var(--night);
+  background: #eceae5;
   border-left: 1px solid var(--rail);
 }
 
 #mapa {
   width: 100%;
   height: 100%;
-  background: #0e1015;
+  background: #eceae5;
 }
+
+/* La barra del cajón y el botón que lo abre solo existen en pantalla angosta. */
+.cajon-barra,
+.cajon-abrir,
+.velo { display: none; }
 
 .map-reset {
   position: absolute;
@@ -278,7 +257,10 @@ a { color: inherit; }
 
 /* ─── Parada ───────────────────────────────────────────────────────── */
 
-.stop { position: relative; }
+.stop {
+  position: relative;
+  scroll-margin-top: 1.5rem;
+}
 
 .stop__head {
   display: grid;
@@ -444,84 +426,232 @@ a { color: inherit; }
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid var(--tier);
-  background: #14161c;
-  color: var(--tier);
+  border: 2px solid #fff;
+  background: var(--tier-mapa);
+  color: #fff;
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 500;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  box-shadow: 0 1px 4px rgba(24, 28, 36, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .pin:hover { transform: scale(1.15); }
 
 .pin.is-on {
-  background: var(--tier);
-  color: #14161c;
-  transform: scale(1.3);
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--tier) 22%, transparent);
+  transform: scale(1.32);
+  box-shadow:
+    0 0 0 5px color-mix(in srgb, var(--tier-mapa) 28%, transparent),
+    0 2px 8px rgba(24, 28, 36, 0.45);
 }
 
 .leaflet-container {
-  background: #0e1015;
+  background: #eceae5;
   font-family: var(--body);
 }
 
-/* Los tiles vienen en gris medio: hundimos el mapa hacia el azul de la página
-   y le devolvemos brillo solo a la capa de nombres, que si no queda ilegible. */
-.leaflet-tile-pane {
-  filter: brightness(0.46) contrast(1.15) sepia(0.45) hue-rotate(178deg) saturate(0.65);
-}
-
-.capa-nombres {
-  filter: brightness(1.95) contrast(0.95) saturate(0);
-}
-
 .leaflet-control-attribution {
-  background: rgba(20, 22, 28, 0.82) !important;
-  color: var(--dim-2) !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  color: #6a7180 !important;
   font-size: 10px !important;
 }
 
-.leaflet-control-attribution a { color: var(--dim) !important; }
+.leaflet-control-attribution a { color: #4a515e !important; }
 
 .leaflet-bar a {
-  background: var(--slate) !important;
-  color: var(--bone) !important;
-  border-color: var(--rail) !important;
+  background: #fff !important;
+  color: #2b3038 !important;
+  border-color: #cfcdc7 !important;
 }
 
-.leaflet-bar a:hover { background: var(--slate-hi) !important; }
+.leaflet-bar a:hover { background: #f2f0eb !important; }
 
-/* ─── Angosto ──────────────────────────────────────────────────────── */
+.leaflet-tooltip {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--rail);
+  border-radius: 4px;
+  background: rgba(20, 22, 28, 0.96);
+  color: var(--bone);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  box-shadow: none;
+}
+
+.leaflet-tooltip-top::before { border-top-color: var(--rail); }
+
+/* ─── Angosto: la lista pasa a ser un cajón sobre el mapa ──────────── */
 
 @media (max-width: 900px) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero { flex: none; }
+
+  .hero__inner {
+    padding: 1.5rem 1.25rem 1.1rem;
+  }
+
+  .leyenda {
+    margin-top: 1.2rem;
+    gap: 0.35rem 1rem;
+    font-size: 0.68rem;
+  }
+
   .split {
-    grid-template-columns: 1fr;
+    display: block;
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    /* El `margin: 0 auto` de escritorio anula el stretch del flex y deja ancho 0. */
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
 
   .map-pane {
-    order: -1;
-    height: 44vh;
-    height: 44dvh;
+    position: absolute;
+    inset: 0;
+    height: auto;
     border-left: 0;
-    border-bottom: 1px solid var(--rail);
   }
 
   .lista-pane {
-    padding-top: 2rem;
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: 30;
+    width: min(88vw, 400px);
+    padding: 0 1.25rem 2.5rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--night);
+    border-right: 1px solid var(--rail);
+    box-shadow: 0 0 34px rgba(8, 9, 12, 0.55);
+    transform: translateX(-101%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .map-reset {
-    bottom: 14px;
+  .lista-pane.is-open { transform: none; }
+
+  .cajon-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 0 -1.25rem 0.5rem;
+    padding: 0.85rem 1.25rem;
+    background: var(--night);
+    border-bottom: 1px solid var(--rail);
   }
+
+  .cajon-barra__titulo {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim-2);
+  }
+
+  .cajon-cerrar {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--rail);
+    border-radius: 999px;
+    background: none;
+    color: var(--dim);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    cursor: pointer;
+  }
+
+  .cajon-abrir {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 25;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--rail);
+    border-radius: 999px;
+    background: rgba(20, 22, 28, 0.94);
+    color: var(--bone);
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(8, 9, 12, 0.35);
+    transition: opacity 0.2s ease;
+  }
+
+  .cajon-abrir__lineas {
+    position: relative;
+    width: 13px;
+    height: 9px;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  .cajon-abrir__lineas::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+    background: currentColor;
+  }
+
+  .cajon-abrir[aria-expanded='true'] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .velo {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    background: rgba(10, 11, 14, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .velo.is-on {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .pie { margin-top: 2.5rem; }
+
+  .map-reset {
+    left: auto;
+    right: 12px;
+    bottom: 28px;
+  }
+
+  /* En el teléfono se llega por gesto: los botones de zoom solo estorban. */
+  .leaflet-control-zoom { display: none; }
 
   /* Con la isla entera en pantalla chica los pines se pisan: achicarlos ayuda. */
   .pin {
-    width: 22px;
-    height: 22px;
-    font-size: 0.62rem;
+    width: 23px;
+    height: 23px;
+    font-size: 0.63rem;
     border-width: 1.5px;
   }
 }
@@ -551,26 +681,3 @@ a { color: inherit; }
     transition-duration: 0.01ms !important;
   }
 }
-
-/* ─── Anclaje al saltar de un pin a su tarjeta ─────────────────────── */
-
-.stop { scroll-margin-top: 1.5rem; }
-
-@media (max-width: 900px) {
-  .stop { scroll-margin-top: calc(44dvh + 1rem); }
-}
-
-/* ─── Tooltip del mapa ─────────────────────────────────────────────── */
-
-.leaflet-tooltip {
-  padding: 0.3rem 0.55rem;
-  border: 1px solid var(--rail);
-  border-radius: 4px;
-  background: rgba(20, 22, 28, 0.96);
-  color: var(--bone);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  box-shadow: none;
-}
-
-.leaflet-tooltip-top::before { border-top-color: var(--rail); }

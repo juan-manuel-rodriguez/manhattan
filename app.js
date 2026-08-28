@@ -1,10 +1,10 @@
 /* Manhattan de arriba hacia abajo — lista y mapa, sincronizados. */
 
 const TIERS = [
-  { max: 0, key: 'free', color: 'var(--t-free)', hex: '#22b85f' },
-  { max: 20, key: 'low', color: 'var(--t-low)', hex: '#f5c518' },
-  { max: 40, key: 'mid', color: 'var(--t-mid)', hex: '#ff7a2f' },
-  { max: Infinity, key: 'high', color: 'var(--t-high)', hex: '#ff4d42' },
+  { max: 0, color: 'var(--t-free)', mapa: 'var(--m-free)' },
+  { max: 20, color: 'var(--t-low)', mapa: 'var(--m-low)' },
+  { max: 40, color: 'var(--t-mid)', mapa: 'var(--m-mid)' },
+  { max: Infinity, color: 'var(--t-high)', mapa: 'var(--m-high)' },
 ]
 
 const tierDe = (precio) => TIERS.find((t) => precio <= t.max)
@@ -18,6 +18,8 @@ const plata = (precio) => {
   return `US$ ${n}`
 }
 
+const angosto = () => window.matchMedia('(max-width: 900px)').matches
+
 /* ── Datos ordenados como se recorren ──────────────────────────────── */
 
 const paradas = []
@@ -26,15 +28,6 @@ ZONAS.forEach((zona) => {
     paradas.push({ ...lugar, n: paradas.length + 1, tier: tierDe(lugar.precio) })
   })
 })
-
-/* ── Encabezado ────────────────────────────────────────────────────── */
-
-const gratis = paradas.filter((p) => p.precio === 0).length
-const suma = paradas.reduce((acc, p) => acc + p.precio, 0)
-
-document.getElementById('stat-total').textContent = paradas.length
-document.getElementById('stat-gratis').textContent = gratis
-document.getElementById('stat-plata').textContent = plata(Math.round(suma))
 
 /* ── Lista ─────────────────────────────────────────────────────────── */
 
@@ -90,14 +83,13 @@ const mapa = L.map('mapa', { zoomControl: true, scrollWheelZoom: true })
 
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas'
 
-L.tileLayer(`${ESRI}/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}`, {
+L.tileLayer(`${ESRI}/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}`, {
   attribution: 'Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
   maxZoom: 16,
 }).addTo(mapa)
 
-L.tileLayer(`${ESRI}/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, {
+L.tileLayer(`${ESRI}/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, {
   maxZoom: 16,
-  className: 'capa-nombres',
 }).addTo(mapa)
 
 const limites = L.latLngBounds(paradas.map((p) => [p.lat, p.lng]))
@@ -122,7 +114,7 @@ paradas.forEach((p) => {
   const marcador = L.marker([p.lat, p.lng], {
     icon: L.divIcon({
       className: 'pin-wrap',
-      html: `<div class="pin" style="--tier:${p.tier.color}">${p.n}</div>`,
+      html: `<div class="pin" style="--tier-mapa:${p.tier.mapa}">${p.n}</div>`,
       iconSize: [28, 28],
       iconAnchor: [14, 14],
     }),
@@ -135,14 +127,37 @@ paradas.forEach((p) => {
   marcadores.set(p.n, marcador)
 })
 
+/* ── El cajón (solo en pantalla angosta) ───────────────────────────── */
+
+const panel = document.getElementById('panel-lista')
+const botonCajon = document.getElementById('cajon-abrir')
+const velo = document.getElementById('velo')
+
+function abrirCajon() {
+  panel.classList.add('is-open')
+  velo.classList.add('is-on')
+  botonCajon.setAttribute('aria-expanded', 'true')
+}
+
+function cerrarCajon() {
+  panel.classList.remove('is-open')
+  velo.classList.remove('is-on')
+  botonCajon.setAttribute('aria-expanded', 'false')
+}
+
+botonCajon.addEventListener('click', abrirCajon)
+velo.addEventListener('click', cerrarCajon)
+document.getElementById('cajon-cerrar').addEventListener('click', cerrarCajon)
+
 /* ── Sincronía ─────────────────────────────────────────────────────── */
 
 const reset = document.getElementById('map-reset')
 const split = document.querySelector('.split')
 let activa = null
 
-/* Arriba de todo el mapa queda tapado por el encabezado: lo subimos antes de volar. */
+/* En pantalla ancha el mapa arranca tapado por el encabezado: subirlo antes de volar. */
 function traerMapaALaVista() {
+  if (angosto()) return
   const arriba = split.getBoundingClientRect().top
   if (arriba > 1) window.scrollTo({ top: window.scrollY + arriba, behavior: 'smooth' })
 }
@@ -181,6 +196,7 @@ function abrir(n, { desde } = {}) {
   mapa.flyTo([p.lat, p.lng], zoom, { duration: 0.7 })
 
   if (desde === 'mapa') {
+    if (angosto()) abrirCajon()
     document.getElementById(`parada-${n}`).scrollIntoView({ block: 'start' })
   } else {
     traerMapaALaVista()
@@ -199,5 +215,7 @@ reset.addEventListener('click', () => {
 })
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') cerrar()
+  if (e.key !== 'Escape') return
+  if (angosto() && panel.classList.contains('is-open')) cerrarCajon()
+  else cerrar()
 })

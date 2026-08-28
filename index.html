@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Manhattan de arriba hacia abajo — guía con mapa y precios</title>
 <meta name="description" content="41 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa, precios en dólares y cuáles son gratis.">
 <meta name="theme-color" content="#14161C">
@@ -30,16 +30,6 @@
       <span class="hero__title-1">Manhattan</span>
       <span class="hero__title-2">de arriba hacia abajo</span>
     </h1>
-    <p class="hero__lede">
-      Los lugares que vale la pena visitar, ordenados como se camina la isla: del norte al sur.
-      Tocá cualquiera para ver qué es, cuánto lleva y cuánto sale.
-    </p>
-
-    <dl class="stats">
-      <div class="stat"><dt>Paradas</dt><dd id="stat-total">—</dd></div>
-      <div class="stat"><dt>Gratis</dt><dd id="stat-gratis">—</dd></div>
-      <div class="stat"><dt>Todo pago, por persona</dt><dd id="stat-plata">—</dd></div>
-    </dl>
 
     <ul class="leyenda" aria-label="Qué significa cada color">
       <li><i class="dot dot--free"></i>Gratis</li>
@@ -51,8 +41,21 @@
 </header>
 
 <main class="split">
-  <div class="lista-pane">
+  <button type="button" class="cajon-abrir" id="cajon-abrir" aria-expanded="false" aria-controls="panel-lista">
+    <span class="cajon-abrir__lineas" aria-hidden="true"></span>
+    Lugares
+  </button>
+
+  <div class="velo" id="velo"></div>
+
+  <aside class="lista-pane" id="panel-lista" aria-label="Lugares, de norte a sur">
+    <div class="cajon-barra">
+      <p class="cajon-barra__titulo">De norte a sur</p>
+      <button type="button" class="cajon-cerrar" id="cajon-cerrar" aria-label="Cerrar la lista">Cerrar</button>
+    </div>
+
     <div class="lista" id="lista"></div>
+
     <footer class="pie">
       <p>
         Precios de entrada general para adultos, en dólares, a modo de referencia.
@@ -60,11 +63,11 @@
       </p>
       <p>
         Mapa de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> y
-        <a href="https://carto.com/attributions">CARTO</a>.
+        <a href="https://www.esri.com">Esri</a>.
         Código en <a href="https://github.com/juan-manuel-rodriguez/manhattan">GitHub</a>.
       </p>
     </footer>
-  </div>
+  </aside>
 
   <div class="map-pane">
     <div id="mapa" role="application" aria-label="Mapa de Manhattan con los lugares de la lista"></div>

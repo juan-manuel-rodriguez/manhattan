@@ -11,6 +11,10 @@ sale entrar — verde gratis, amarillo hasta 20 dólares, naranja de 20 a 40, ro
 Tocar una parada la expande y lleva el mapa hasta ahí; tocar un punto del mapa abre
 su parada en la lista.
 
+En pantalla ancha la lista es un panel fijo al costado del mapa. En el teléfono el mapa
+ocupa toda la pantalla y la lista pasa a ser un cajón lateral que se abre con el botón
+**Lugares**.
+
 ## Editar la guía
 
 Todo el contenido está en [`data/lugares.js`](data/lugares.js). Cada lugar es un objeto:
@@ -48,6 +52,6 @@ python3 -m http.server 8000
 ## Stack
 
 HTML, CSS y JavaScript sin framework. [Leaflet](https://leafletjs.com) para el mapa,
-con tiles de [CARTO](https://carto.com/attributions) sobre
+con los tiles Light Gray Canvas de [Esri](https://www.esri.com) sobre
 [OpenStreetMap](https://www.openstreetmap.org/copyright). Se publica solo con GitHub Pages
 desde la rama `main`.
