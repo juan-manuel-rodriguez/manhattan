@@ -88,15 +88,33 @@ lista.innerHTML = ZONAS.map((zona) => {
 
 const mapa = L.map('mapa', { zoomControl: true, scrollWheelZoom: true })
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  maxZoom: 19,
+const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas'
+
+L.tileLayer(`${ESRI}/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}`, {
+  attribution: 'Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
+  maxZoom: 16,
+}).addTo(mapa)
+
+L.tileLayer(`${ESRI}/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, {
+  maxZoom: 16,
+  className: 'capa-nombres',
 }).addTo(mapa)
 
 const limites = L.latLngBounds(paradas.map((p) => [p.lat, p.lng]))
-const verTodo = () => mapa.fitBounds(limites, { padding: [40, 40] })
+
+const verTodo = () => {
+  mapa.invalidateSize({ animate: false })
+  mapa.fitBounds(limites, { padding: [40, 40], animate: false })
+}
+
 verTodo()
+
+// Si el contenedor todavía no tenía altura al arrancar, el encuadre sale mal: rehacerlo.
+window.addEventListener('load', () => {
+  if (activa === null) verTodo()
+})
+
+window.addEventListener('resize', () => mapa.invalidateSize({ animate: false }))
 
 const marcadores = new Map()
 
@@ -120,7 +138,14 @@ paradas.forEach((p) => {
 /* ── Sincronía ─────────────────────────────────────────────────────── */
 
 const reset = document.getElementById('map-reset')
+const split = document.querySelector('.split')
 let activa = null
+
+/* Arriba de todo el mapa queda tapado por el encabezado: lo subimos antes de volar. */
+function traerMapaALaVista() {
+  const arriba = split.getBoundingClientRect().top
+  if (arriba > 1) window.scrollTo({ top: window.scrollY + arriba, behavior: 'smooth' })
+}
 
 function pintar(n, encendido) {
   const pin = marcadores.get(n)?.getElement()?.querySelector('.pin')
@@ -157,6 +182,8 @@ function abrir(n, { desde } = {}) {
 
   if (desde === 'mapa') {
     document.getElementById(`parada-${n}`).scrollIntoView({ block: 'start' })
+  } else {
+    traerMapaALaVista()
   }
 }
 

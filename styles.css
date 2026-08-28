@@ -178,8 +178,10 @@ a { color: inherit; }
 .map-pane {
   position: sticky;
   top: 0;
+  z-index: 10;
   height: 100vh;
   height: 100dvh;
+  background: var(--night);
   border-left: 1px solid var(--rail);
 }
 
@@ -466,6 +468,16 @@ a { color: inherit; }
   font-family: var(--body);
 }
 
+/* Los tiles vienen en gris medio: hundimos el mapa hacia el azul de la página
+   y le devolvemos brillo solo a la capa de nombres, que si no queda ilegible. */
+.leaflet-tile-pane {
+  filter: brightness(0.46) contrast(1.15) sepia(0.45) hue-rotate(178deg) saturate(0.65);
+}
+
+.capa-nombres {
+  filter: brightness(1.95) contrast(0.95) saturate(0);
+}
+
 .leaflet-control-attribution {
   background: rgba(20, 22, 28, 0.82) !important;
   color: var(--dim-2) !important;
@@ -503,6 +515,14 @@ a { color: inherit; }
 
   .map-reset {
     bottom: 14px;
+  }
+
+  /* Con la isla entera en pantalla chica los pines se pisan: achicarlos ayuda. */
+  .pin {
+    width: 22px;
+    height: 22px;
+    font-size: 0.62rem;
+    border-width: 1.5px;
   }
 }
 
