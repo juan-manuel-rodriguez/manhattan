@@ -327,14 +327,18 @@ a { color: inherit; }
 .stop.is-open .stop__nombre { color: var(--tier); }
 .stop.is-open .stop__head { border-bottom-color: transparent; }
 
-/* Acordeón sin medir alturas a mano */
+/* Acordeón sin medir alturas a mano. La transición vive en el estado abierto a
+   propósito: al cerrar no se anima, así la ficha que se abre no se corre para
+   arriba mientras la anterior se desinfla y el salto queda donde tiene que ir. */
 .stop__body {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.stop.is-open .stop__body { grid-template-rows: 1fr; }
+.stop.is-open .stop__body {
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .stop__body > div {
   overflow: hidden;
@@ -673,6 +677,7 @@ a { color: inherit; }
     padding: 0 1.25rem 2.5rem;
     overflow-y: auto;
     overscroll-behavior: contain;
+    scroll-behavior: smooth;
     background: var(--night);
     border-right: 1px solid var(--rail);
     box-shadow: 0 0 34px rgba(8, 9, 12, 0.55);
@@ -821,7 +826,8 @@ a { color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html,
+  .lista-pane { scroll-behavior: auto; }
 
   *,
   *::before,

@@ -228,15 +228,7 @@ document.getElementById('cajon-cerrar').addEventListener('click', cerrarCajon)
 /* ── Sincronía ─────────────────────────────────────────────────────── */
 
 const reset = document.getElementById('map-reset')
-const split = document.querySelector('.split')
 let activa = null
-
-/* En pantalla ancha el mapa arranca tapado por el encabezado: subirlo antes de volar. */
-function traerMapaALaVista() {
-  if (angosto()) return
-  const arriba = split.getBoundingClientRect().top
-  if (arriba > 1) window.scrollTo({ top: window.scrollY + arriba, behavior: 'smooth' })
-}
 
 function pintar(n, encendido) {
   const pin = marcadores.get(n)?.getElement()?.querySelector('.pin')
@@ -268,16 +260,15 @@ function abrir(n, { desde } = {}) {
   montarGaleria(n)
   reset.classList.add('is-on')
 
+  if (desde === 'mapa' && angosto()) abrirCajon()
+
   const p = paradas[n - 1]
   const zoom = Math.max(mapa.getZoom(), 15)
   mapa.flyTo([p.lat, p.lng], zoom, { duration: 0.7 })
 
-  if (desde === 'mapa') {
-    if (angosto()) abrirCajon()
-    document.getElementById(`parada-${n}`).scrollIntoView({ block: 'start' })
-  } else {
-    traerMapaALaVista()
-  }
+  /* La ficha abierta va siempre al tope: así se ve entera con su galería, y en
+     pantalla ancha el encabezado queda arriba y el mapa entra completo. */
+  document.getElementById(`parada-${n}`).scrollIntoView({ block: 'start' })
 }
 
 lista.addEventListener('click', (e) => {

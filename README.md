@@ -1,12 +1,13 @@
 # Manhattan de arriba hacia abajo
 
-Guía de 41 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
-precios de entrada y cuáles son gratis.
+Guía de 51 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
+fotos, precios de entrada y cuáles son gratis.
 
 **→ [juan-manuel-rodriguez.github.io/manhattan](https://juan-manuel-rodriguez.github.io/manhattan/)**
 
 La lista se lee como una línea de subte: un riel vertical con una parada por lugar,
-del extremo norte de la isla hasta Battery Park. El color de cada parada dice cuánto
+del Little Red Lighthouse, abajo del puente George Washington, hasta la Estatua
+de la Libertad. El color de cada parada dice cuánto
 sale entrar — verde gratis, amarillo hasta 20 dólares, naranja de 20 a 40, rojo más de 40.
 Tocar una parada la expande con su galería de fotos, la descripción y el precio, y
 lleva el mapa hasta ahí; tocar un punto del mapa abre su parada en la lista. Las fotos
@@ -63,6 +64,20 @@ réplicas y no del lugar— se apunta a una categoría de Commons en vez del art
 ```js
 wiki: 'Category:Edge (observation deck)',
 ```
+
+## Los iconos
+
+Los PNG de `iconos/` también son generados, por
+[`tools/iconos.mjs`](tools/iconos.mjs):
+
+```bash
+node tools/iconos.mjs
+```
+
+Dibuja el riel con tres paradas —el mismo gesto que la lista— en un búfer RGBA y
+codifica el PNG con zlib, así que no hace falta instalar nada ni versionar binarios
+que después nadie puede editar. Salen los tamaños que pide
+[`manifest.webmanifest`](manifest.webmanifest) más el `apple-touch-icon`.
 
 ## Correrlo
 

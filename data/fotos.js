@@ -35,6 +35,102 @@ const FOTOS = {
    "licencia": "CC0"
   }
  ],
+ "Category:Little Red Lighthouse": [
+  {
+   "archivo": "2014 Little Red Lighthouse 1.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "2014 Little Red Lighthouse 2.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "2014 Little Red Lighthouse and George Washington Bridge landscape.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "2014 Little Red Lighthouse and George Washington Bridge portrait.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "2015 Little Red Lighthouse annual tour (01) people on gallery deck.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "2015 Little Red Lighthouse annual tour (02) Park Ranger conducting tour.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "High Bridge (New York City)": [
+  {
+   "archivo": "HighbridgeNewYork.jpg",
+   "autor": "Asaavedra32",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Hi Bridge & tower from Wash Br ramp in Bronx jeh.jpg",
+   "autor": "Jim.henderson",
+   "licencia": "Public domain"
+  },
+  {
+   "archivo": "High Bridge jeh.JPG",
+   "autor": "Jim.henderson",
+   "licencia": "Public domain"
+  },
+  {
+   "archivo": "Interior spiral staircase (3), Highbridge Water Tower, Manhattan, 2008-10-04.jpg",
+   "autor": "This photo was taken by participant/team Equipe C'est N'est Pas Une Pipe as part of the Co",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "High Bridge big small Bronx arches jeh.jpg",
+   "autor": "Jim.henderson",
+   "licencia": "CC0"
+  },
+  {
+   "archivo": "Gold plated scissors & Green ribbon HB jeh.jpg",
+   "autor": "Jim.henderson",
+   "licencia": "CC BY 3.0"
+  }
+ ],
+ "Morris–Jumel Mansion": [
+  {
+   "archivo": "Morris jumel inside.JPG",
+   "autor": "User:Fbv65edel",
+   "licencia": "Public domain"
+  },
+  {
+   "archivo": "2014 Morris-Jumel Mansion from northwest.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "2014 Morris-Jumel Mansion from southwest.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Roger Morris Park garden.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Roger Morris Park garden with sundial.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Morris Jumel Mansion Stairs.jpg",
+   "autor": "Antoni Jalandoni",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
  "Apollo Theater": [
   {
    "archivo": "Apollo Marquee 2006.jpg",
@@ -99,36 +195,218 @@ const FOTOS = {
    "licencia": "CC BY-SA 3.0"
   }
  ],
- "Central Park": [
+ "Category:Conservatory Garden": [
   {
-   "archivo": "Global Citizen Festival Central Park New York City from NYonAir (15351915006).jpg",
-   "autor": "Anthony Quintano from Hillsborough, NJ, United States",
+   "archivo": "Burnett Memorial Fountain, Conservatory Garden, Central Park, New York City, 20231004 1540 2075.jpg",
+   "autor": "Jakub Hałun",
+   "licencia": "CC BY 4.0"
+  },
+  {
+   "archivo": "Butterfly in Conservatory Garden, Central Park, New York City, 20231004 1539 2071.jpg",
+   "autor": "Jakub Hałun",
+   "licencia": "CC BY 4.0"
+  },
+  {
+   "archivo": "Butterfly in Conservatory Garden, Central Park, New York City, 20231004 1540 2074.jpg",
+   "autor": "Jakub Hałun",
+   "licencia": "CC BY 4.0"
+  },
+  {
+   "archivo": "Centeal Park Conservatory Garden 01.jpg",
+   "autor": "Kidfly182",
+   "licencia": "CC BY 4.0"
+  },
+  {
+   "archivo": "Centeal Park Conservatory Garden 02.jpg",
+   "autor": "Kidfly182",
+   "licencia": "CC BY 4.0"
+  },
+  {
+   "archivo": "Centeal Park Conservatory Garden 03.jpg",
+   "autor": "Kidfly182",
+   "licencia": "CC BY 4.0"
+  }
+ ],
+ "Category:Jacqueline Kennedy Onassis Reservoir": [
+  {
+   "archivo": "(PANORAMA) NYC from The Reservoir (5774287507).jpg",
+   "autor": "Diego Torres Silvestre from Sao Paulo, Brazil",
    "licencia": "CC BY 2.0"
   },
   {
-   "archivo": "Central Park New York October 2016 004.jpg",
-   "autor": "King of Hearts",
-   "licencia": "CC BY-SA 4.0"
-  },
-  {
-   "archivo": "Central Park loch (83183).jpg",
-   "autor": "Rhododendrites",
-   "licencia": "CC BY-SA 4.0"
-  },
-  {
-   "archivo": "Jacqueline Kennedy Onassis Reservoir.jpg",
-   "autor": "Carsten Keßler from Münster, Germany",
-   "licencia": "CC BY 2.0"
-  },
-  {
-   "archivo": "Central Park - Loeb Boathouse (48377219127).jpg",
-   "autor": "Ajay Suresh from New York, NY, USA",
-   "licencia": "CC BY 2.0"
-  },
-  {
-   "archivo": "Central Park Bolt.jpg",
-   "autor": "z22",
+   "archivo": "Central Park reservoir IMG 0680.JPG",
+   "autor": "Billy Hathorn at en.wikipedia",
    "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "A cormorant in Central Park diving.jpg",
+   "autor": "Jay Dobkin",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "A cormorant in Central Park swimming 1.jpg",
+   "autor": "Jay Dobkin",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "A cormorant in Central Park swimming 4.jpg",
+   "autor": "Jay Dobkin",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "A pair of mallards in the Central Park reservoir 2.jpg",
+   "autor": "Jay Dobkin",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Belvedere Castle": [
+  {
+   "archivo": "Belvedere Castle Corner Tower 2176px.jpg",
+   "autor": "Photo by and (c)2006 Derek Ramsey (Ram-Man)",
+   "licencia": "GFDL 1.2"
+  },
+  {
+   "archivo": "Belvedere Castle, Central Park.jpg",
+   "autor": "Stig Nygaard from Copenhagen, Denmark",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "2024-05-24 17 49 58 View south across the Central Park Automated Surface Observing System (ASOS) in Central Park, Manhattan, New York City, New York.jpg",
+   "autor": "Famartin",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Belvedere Castle and Turtle Pond, Central Park, Manhattan, New York.jpg",
+   "autor": "Christian David",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Category:Bow Bridge (Central Park)": [
+  {
+   "archivo": "2024-11-19-Bow Bridge (Central Park)-0644.jpg",
+   "autor": "Superbass",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "2925-Central Park-The Lake.JPG",
+   "autor": "Ingfbruno",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "2947-Central Park-Bow Bridge.JPG",
+   "autor": "Ingfbruno",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "American elm next to Bow Bridge in Central Park, NYC (February 2026).jpg",
+   "autor": "Marty Aligata",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Blogpost2.jpg",
+   "autor": "EleonoraMagna",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Bow Bridge (3289089445).jpg",
+   "autor": "Ludovic Bertron from New York City, Usa",
+   "licencia": "CC BY 2.0"
+  }
+ ],
+ "Category:Strawberry Fields memorial": [
+  {
+   "archivo": "2960-Central Park-Strawberry Fields.JPG",
+   "autor": "Ingfbruno",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "2979-Central Park-Strawberry Fields.JPG",
+   "autor": "Ingfbruno",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Central Park Apr 2019 146.jpg",
+   "autor": "Epicgenius",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Central Park Apr 2019 147.jpg",
+   "autor": "Epicgenius",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Central Park Apr 2019 148.jpg",
+   "autor": "Epicgenius",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Central Park, New York, NY, USA - panoramio (148).jpg",
+   "autor": "Roman Eugeniusz",
+   "licencia": "CC BY-SA 3.0"
+  }
+ ],
+ "Category:Bethesda Terrace": [
+  {
+   "archivo": "2927-Central Park-Bethesda Fountain.JPG",
+   "autor": "Ingfbruno",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "At New York, USA 2017 372.jpg",
+   "autor": "Photograph by Mike Peel (www.mikepeel.net).",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "At New York, USA 2017 373.jpg",
+   "autor": "Photograph by Mike Peel (www.mikepeel.net).",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "At New York, USA 2017 378.jpg",
+   "autor": "Photograph by Mike Peel (www.mikepeel.net).",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "At New York, USA 2017 379.jpg",
+   "autor": "Photograph by Mike Peel (www.mikepeel.net).",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Bethesda Fountain from the Bethesda Terrace - Central Park - NYC - August 23 2009 - 1.jpg",
+   "autor": "Francisco Diez from New Jersey, USA",
+   "licencia": "CC BY 2.0"
+  }
+ ],
+ "Category:Central Park Zoo": [
+  {
+   "archivo": "At New York, USA 2017 345.jpg",
+   "autor": "Photograph by Mike Peel (www.mikepeel.net).",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "At New York, USA 2017 362.jpg",
+   "autor": "Photograph by Mike Peel (www.mikepeel.net).",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Central Park td (2019-07-11) 062 - Wien Walk.jpg",
+   "autor": "Tdorante10",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Central Park td (2019-07-11) 063 - Wien Walk, Central Park Zoo.jpg",
+   "autor": "Tdorante10",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Central Park td (2019-07-11) 064 - Wien Walk, Central Park Zoo.jpg",
+   "autor": "Tdorante10",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Central Park ZOO (1).jpg",
+   "autor": "Ferfive",
+   "licencia": "CC BY 4.0"
   }
  ],
  "American Museum of Natural History": [
@@ -924,6 +1202,38 @@ const FOTOS = {
    "archivo": "Cast-Iron 451-Broome-Street from Greene Street.jpg",
    "autor": "Axel Tschentscher",
    "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Category:Little Italy, Manhattan": [
+  {
+   "archivo": "186 Grand St sun jeh.jpg",
+   "autor": "Jim.henderson",
+   "licencia": "CC BY 4.0"
+  },
+  {
+   "archivo": "Caffe Roma (12669419143).jpg",
+   "autor": "Paul Sableman",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Chambers St Centre St td (2022-03-04) 22.jpg",
+   "autor": "Tdorante10",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Chinatown-little-italy-manhattan-2004.jpg",
+   "autor": "Wikimedia Commons",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Church of San Salvadore (4691466591).jpg",
+   "autor": "Tony Hisgett from Birmingham, UK",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Church Wedged In (12669777074).jpg",
+   "autor": "Paul Sableman",
+   "licencia": "CC BY 2.0"
   }
  ],
  "Category:Lower East Side Tenement Museum": [
