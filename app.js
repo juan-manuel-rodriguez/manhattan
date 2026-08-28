@@ -20,6 +20,14 @@ const plata = (precio) => {
 
 const angosto = () => window.matchMedia('(max-width: 900px)').matches
 
+/* Sin origen a propósito: así cada app arranca desde el GPS de quien la abre.
+   Apple Maps en iPhone y Mac, Google Maps en el resto. Siempre a pie. */
+const enApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)
+const comoLlegar = (p) =>
+  enApple
+    ? `https://maps.apple.com/?daddr=${p.lat},${p.lng}&dirflg=w`
+    : `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}&travelmode=walking`
+
 /* ── Datos ordenados como se recorren ──────────────────────────────── */
 
 const paradas = []
@@ -60,9 +68,14 @@ lista.innerHTML = ZONAS.map((zona) => {
                 ${p.nota ? `<span class="chip chip--nota">${esc(p.nota)}</span>` : ''}
               </div>
               <p class="stop__tip">${esc(p.tip)}</p>
-              <a class="stop__link" href="${esc(p.web)}" target="_blank" rel="noopener noreferrer">
-                Sitio oficial ↗
-              </a>
+              <div class="stop__acciones">
+                <a class="stop__ir" href="${comoLlegar(p)}" target="_blank" rel="noopener noreferrer">
+                  Cómo llegar ↗
+                </a>
+                <a class="stop__link" href="${esc(p.web)}" target="_blank" rel="noopener noreferrer">
+                  Sitio oficial ↗
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -286,6 +299,103 @@ lista.addEventListener('click', (e) => {
 reset.addEventListener('click', () => {
   cerrar()
   verTodo()
+})
+
+/* ── Dónde estoy ───────────────────────────────────────────────────── */
+
+const botonYo = document.getElementById('map-yo')
+const aviso = document.getElementById('aviso')
+
+const PORQUE = {
+  1: 'No diste permiso para usar tu ubicación. Se habilita desde el candado de la barra de direcciones.',
+  2: 'No se pudo leer la ubicación. Fijate que el GPS esté prendido y probá de nuevo.',
+  3: 'La ubicación tardó demasiado. Probá de nuevo.',
+}
+
+let vigilancia = null
+let marcaYo = null
+let cercoYo = null
+let primerFijo = true
+let relojAviso = null
+
+function decir(texto, ms = 5000) {
+  clearTimeout(relojAviso)
+  aviso.textContent = texto
+  aviso.classList.toggle('is-on', Boolean(texto))
+  if (texto) relojAviso = setTimeout(() => decir(''), ms)
+}
+
+function apagarYo() {
+  if (vigilancia !== null) navigator.geolocation.clearWatch(vigilancia)
+  vigilancia = null
+  primerFijo = true
+  if (marcaYo) mapa.removeLayer(marcaYo)
+  if (cercoYo) mapa.removeLayer(cercoYo)
+  marcaYo = null
+  cercoYo = null
+  botonYo.classList.remove('is-on')
+  botonYo.setAttribute('aria-pressed', 'false')
+}
+
+function pintarYo(pos) {
+  const punto = [pos.coords.latitude, pos.coords.longitude]
+
+  if (marcaYo) {
+    marcaYo.setLatLng(punto)
+    cercoYo.setLatLng(punto).setRadius(pos.coords.accuracy)
+  } else {
+    cercoYo = L.circle(punto, {
+      radius: pos.coords.accuracy,
+      className: 'cerco-yo',
+      interactive: false,
+    }).addTo(mapa)
+
+    marcaYo = L.marker(punto, {
+      icon: L.divIcon({ className: 'yo-wrap', html: '<div class="yo"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }),
+      interactive: false,
+      zIndexOffset: 1000,
+    }).addTo(mapa)
+  }
+
+  if (!primerFijo) return
+  primerFijo = false
+
+  // Si estás en otro continente no tiene sentido volar hasta ahí y perder la isla.
+  const lejos = L.latLng(punto).distanceTo(NUCLEO.getCenter())
+
+  if (lejos < 60000) {
+    mapa.flyTo(punto, Math.max(mapa.getZoom(), 15), { duration: 0.8 })
+    decir('Ese punto azul sos vos.')
+  } else {
+    const km = Math.round(lejos / 1000).toLocaleString('es-AR')
+    decir(`Estás a ${km} km de Manhattan. El punto quedó marcado igual.`, 9000)
+  }
+}
+
+botonYo.addEventListener('click', () => {
+  if (vigilancia !== null) {
+    apagarYo()
+    decir('')
+    return
+  }
+
+  if (!navigator.geolocation) {
+    decir('Este navegador no sabe dónde estás.')
+    return
+  }
+
+  botonYo.classList.add('is-on')
+  botonYo.setAttribute('aria-pressed', 'true')
+  decir('Buscando dónde estás…', 15000)
+
+  vigilancia = navigator.geolocation.watchPosition(
+    pintarYo,
+    (e) => {
+      apagarYo()
+      decir(PORQUE[e.code] ?? 'No se pudo leer la ubicación.', 10000)
+    },
+    { enableHighAccuracy: true, maximumAge: 15000, timeout: 12000 },
+  )
 })
 
 document.addEventListener('keydown', (e) => {

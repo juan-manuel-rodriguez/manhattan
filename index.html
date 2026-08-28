@@ -81,7 +81,15 @@
 
   <div class="map-pane">
     <div id="mapa" role="application" aria-label="Mapa de Manhattan con los lugares de la lista"></div>
-    <button type="button" class="map-reset" id="map-reset">Ver la isla entera</button>
+
+    <div class="map-controles">
+      <p class="aviso" id="aviso" role="status" aria-live="polite"></p>
+      <button type="button" class="map-boton map-boton--reset" id="map-reset">Ver la isla entera</button>
+      <button type="button" class="map-boton" id="map-yo" aria-pressed="false">
+        <span class="map-boton__punto" aria-hidden="true"></span>
+        Dónde estoy
+      </button>
+    </div>
   </div>
 </main>
 

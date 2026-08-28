@@ -17,6 +17,11 @@ En pantalla ancha la lista es un panel fijo al costado del mapa. En el teléfono
 ocupa toda la pantalla y la lista pasa a ser un cajón lateral que se abre con el botón
 **Lugares**.
 
+**Dónde estoy** pone tu posición en el mapa y la sigue mientras caminás, con el círculo
+de precisión que informa el GPS. Cada lugar tiene un **Cómo llegar** que abre la
+navegación a pie: Apple Maps en iPhone y Mac, Google Maps en el resto. Va sin origen a
+propósito, para que la app arranque desde tu ubicación en vivo.
+
 ## Editar la guía
 
 Todo el contenido está en [`data/lugares.js`](data/lugares.js). Cada lugar es un objeto:
