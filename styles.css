@@ -347,6 +347,49 @@ a { color: inherit; }
   max-width: 62ch;
 }
 
+.galeria {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.4rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rail) transparent;
+}
+
+.galeria:empty { display: none; }
+
+.galeria::-webkit-scrollbar { height: 6px; }
+.galeria::-webkit-scrollbar-thumb { background: var(--rail); border-radius: 3px; }
+
+.galeria__foto {
+  flex: 0 0 auto;
+  width: 196px;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 1px solid var(--rail);
+  border-radius: 4px;
+  background: var(--slate);
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: zoom-in;
+  transition: border-color 0.18s ease;
+}
+
+.galeria__foto:hover { border-color: var(--tier); }
+
+.galeria__foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.galeria__foto:hover img { transform: scale(1.05); }
+
 .stop__desc {
   margin: 0;
   font-weight: 300;
@@ -478,6 +521,104 @@ a { color: inherit; }
 }
 
 .leaflet-tooltip-top::before { border-top-color: var(--rail); }
+
+/* ─── Visor de fotos ───────────────────────────────────────────────── */
+
+.visor {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(9, 10, 13, 0.94);
+  backdrop-filter: blur(4px);
+}
+
+.visor[hidden] { display: none; }
+
+.visor__marco {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: center;
+  margin: 0;
+  max-width: min(100%, 1200px);
+  max-height: 100%;
+}
+
+.visor__foto {
+  min-height: 0;
+  max-width: 100%;
+  max-height: calc(100dvh - 11rem);
+  border-radius: 4px;
+  object-fit: contain;
+  background: var(--slate);
+}
+
+.visor__pie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem 1rem;
+  text-align: center;
+}
+
+.visor__lugar {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.visor__credito,
+.visor__cuenta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--dim);
+}
+
+.visor__credito a { text-underline-offset: 3px; }
+.visor__cuenta { color: var(--dim-2); }
+
+.visor__cerrar,
+.visor__paso {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid var(--rail);
+  background: rgba(20, 22, 28, 0.9);
+  color: var(--bone);
+  font-family: var(--mono);
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.visor__cerrar:hover,
+.visor__paso:hover {
+  border-color: var(--dim);
+  background: var(--slate-hi);
+}
+
+.visor__cerrar {
+  top: clamp(0.75rem, 2vw, 1.5rem);
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+}
+
+.visor__paso {
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  margin-top: -23px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.visor__paso--antes { left: clamp(0.5rem, 2vw, 1.5rem); }
+.visor__paso--luego { right: clamp(0.5rem, 2vw, 1.5rem); }
 
 /* ─── Angosto: la lista pasa a ser un cajón sobre el mapa ──────────── */
 
@@ -636,6 +777,9 @@ a { color: inherit; }
     pointer-events: auto;
   }
 
+  /* La barra fija del cajón tapa el título si el salto no la descuenta. */
+  .stop { scroll-margin-top: 4.25rem; }
+
   .pie { margin-top: 2.5rem; }
 
   .map-reset {
@@ -669,6 +813,11 @@ a { color: inherit; }
 
   .stop__precio { justify-self: start; }
   .stop__bullet { top: 0.8rem; }
+
+  .galeria__foto { width: 74%; }
+
+  .visor__foto { max-height: calc(100dvh - 13rem); }
+  .visor__paso { width: 40px; height: 40px; margin-top: -20px; font-size: 1.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

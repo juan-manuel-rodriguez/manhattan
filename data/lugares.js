@@ -16,6 +16,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'The Met Cloisters',
+    wiki: 'The Cloisters',
     lat: 40.8649, lng: -73.9318,
     precio: 30,
     nota: 'Los residentes de Nueva York pagan lo que quieran.',
@@ -27,6 +28,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'Apollo Theater y Harlem',
+    wiki: 'Apollo Theater',
     lat: 40.8099, lng: -73.9501,
     precio: 0,
     nota: 'Recorrer el barrio es gratis; el tour y los shows se pagan aparte.',
@@ -38,6 +40,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'Catedral de San Juan el Divino',
+    wiki: 'Cathedral of Saint John the Divine',
     lat: 40.8038, lng: -73.9619,
     precio: 15,
     nota: '',
@@ -51,6 +54,7 @@ const LUGARES = [
   {
     zona: 'uws',
     nombre: 'Central Park',
+    wiki: 'Central Park',
     lat: 40.7829, lng: -73.9654,
     precio: 0,
     nota: '',
@@ -62,6 +66,7 @@ const LUGARES = [
   {
     zona: 'uws',
     nombre: 'Museo Americano de Historia Natural',
+    wiki: 'American Museum of Natural History',
     lat: 40.7813, lng: -73.9740,
     precio: 28,
     nota: 'Los residentes de NY, NJ y CT pagan lo que quieran por la entrada general.',
@@ -75,6 +80,7 @@ const LUGARES = [
   {
     zona: 'ues',
     nombre: 'Museo Guggenheim',
+    wiki: 'Solomon R. Guggenheim Museum',
     lat: 40.7830, lng: -73.9590,
     precio: 30,
     nota: 'Los sábados por la tarde suele haber entrada a voluntad, con reserva.',
@@ -86,6 +92,7 @@ const LUGARES = [
   {
     zona: 'ues',
     nombre: 'The Metropolitan Museum of Art',
+    wiki: 'Metropolitan Museum of Art',
     lat: 40.7794, lng: -73.9632,
     precio: 30,
     nota: 'Los residentes de NY y los estudiantes de NY, NJ y CT pagan lo que quieran.',
@@ -97,6 +104,7 @@ const LUGARES = [
   {
     zona: 'ues',
     nombre: 'The Frick Collection',
+    wiki: 'Frick Collection',
     lat: 40.7712, lng: -73.9673,
     precio: 30,
     nota: '',
@@ -110,6 +118,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Museo Intrepid',
+    wiki: 'Intrepid Museum',
     lat: 40.7645, lng: -74.0000,
     precio: 36,
     nota: '',
@@ -121,6 +130,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Tranvía a Roosevelt Island',
+    wiki: 'Roosevelt Island Tramway',
     lat: 40.7614, lng: -73.9640,
     precio: 2.9,
     nota: 'Cuesta lo mismo que un viaje en subte.',
@@ -132,6 +142,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'MoMA',
+    wiki: 'Museum of Modern Art',
     lat: 40.7614, lng: -73.9776,
     precio: 30,
     nota: 'Los viernes de 16 a 20 la entrada es gratuita, con reserva.',
@@ -143,6 +154,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Top of the Rock',
+    wiki: '30 Rockefeller Plaza',
     lat: 40.7593, lng: -73.9794,
     precio: 40,
     nota: '',
@@ -154,6 +166,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Rockefeller Center',
+    wiki: 'Rockefeller Center',
     lat: 40.7587, lng: -73.9787,
     precio: 0,
     nota: '',
@@ -165,6 +178,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Catedral de San Patricio',
+    wiki: 'St. Patrick\'s Cathedral (Manhattan)',
     lat: 40.7585, lng: -73.9760,
     precio: 0,
     nota: '',
@@ -176,6 +190,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Times Square',
+    wiki: 'Times Square',
     lat: 40.7580, lng: -73.9855,
     precio: 0,
     nota: '',
@@ -187,6 +202,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Vessel',
+    wiki: 'Category:Vessel (structure)',
     lat: 40.7540, lng: -74.0021,
     precio: 10,
     nota: 'Subir hasta el nivel más alto se paga aparte.',
@@ -198,6 +214,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Edge',
+    wiki: 'Category:Edge (observation deck)',
     lat: 40.7536, lng: -74.0014,
     precio: 44,
     nota: '',
@@ -209,6 +226,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Biblioteca Pública y Bryant Park',
+    wiki: 'New York Public Library Main Branch',
     lat: 40.7532, lng: -73.9822,
     precio: 0,
     nota: '',
@@ -220,6 +238,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Grand Central Terminal',
+    wiki: 'Grand Central Terminal',
     lat: 40.7527, lng: -73.9772,
     precio: 0,
     nota: '',
@@ -231,6 +250,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Summit One Vanderbilt',
+    wiki: 'One Vanderbilt',
     lat: 40.7527, lng: -73.9787,
     precio: 49,
     nota: '',
@@ -242,6 +262,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Naciones Unidas',
+    wiki: 'Headquarters of the United Nations',
     lat: 40.7489, lng: -73.9680,
     precio: 26,
     nota: '',
@@ -253,6 +274,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Empire State Building',
+    wiki: 'Empire State Building',
     lat: 40.7484, lng: -73.9857,
     precio: 44,
     nota: 'El piso 102 se paga aparte.',
@@ -264,6 +286,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Flatiron y Madison Square Park',
+    wiki: 'Flatiron Building',
     lat: 40.7411, lng: -73.9897,
     precio: 0,
     nota: '',
@@ -277,6 +300,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'The High Line',
+    wiki: 'High Line',
     lat: 40.7480, lng: -74.0048,
     precio: 0,
     nota: '',
@@ -288,6 +312,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Chelsea Market',
+    wiki: 'Chelsea Market',
     lat: 40.7424, lng: -74.0061,
     precio: 0,
     nota: '',
@@ -299,6 +324,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Little Island',
+    wiki: 'Little Island at Pier 55',
     lat: 40.7420, lng: -74.0110,
     precio: 0,
     nota: 'De junio a septiembre hace falta reservar turno, sin costo.',
@@ -310,6 +336,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Whitney Museum',
+    wiki: 'Whitney Museum of American Art',
     lat: 40.7396, lng: -74.0089,
     precio: 30,
     nota: 'Los viernes a la tarde la entrada suele ser a voluntad.',
@@ -321,6 +348,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Washington Square Park y el Village',
+    wiki: 'Washington Square Park',
     lat: 40.7308, lng: -73.9973,
     precio: 0,
     nota: '',
@@ -332,6 +360,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'SoHo',
+    wiki: 'SoHo, Manhattan',
     lat: 40.7233, lng: -74.0030,
     precio: 0,
     nota: '',
@@ -343,6 +372,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Tenement Museum',
+    wiki: 'Category:Lower East Side Tenement Museum',
     lat: 40.7188, lng: -73.9900,
     precio: 30,
     nota: 'Solo se entra con visita guiada, con reserva.',
@@ -354,6 +384,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Chinatown y Little Italy',
+    wiki: 'Chinatown, Manhattan',
     lat: 40.7157, lng: -73.9970,
     precio: 0,
     nota: '',
@@ -367,6 +398,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'One World Observatory',
+    wiki: 'One World Trade Center',
     lat: 40.7127, lng: -74.0134,
     precio: 47,
     nota: '',
@@ -378,6 +410,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Memorial y Museo del 11-S',
+    wiki: 'National September 11 Memorial & Museum',
     lat: 40.7115, lng: -74.0134,
     precio: 36,
     nota: 'El memorial al aire libre es gratis. El precio es el del museo.',
@@ -389,6 +422,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Oculus',
+    wiki: 'World Trade Center Transportation Hub',
     lat: 40.7115, lng: -74.0110,
     precio: 0,
     nota: '',
@@ -400,6 +434,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Puente de Brooklyn',
+    wiki: 'Brooklyn Bridge',
     lat: 40.7061, lng: -73.9969,
     precio: 0,
     nota: '',
@@ -411,6 +446,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'South Street Seaport',
+    wiki: 'South Street Seaport',
     lat: 40.7061, lng: -74.0031,
     precio: 0,
     nota: '',
@@ -422,6 +458,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Wall Street y el Toro',
+    wiki: 'Wall Street',
     lat: 40.7056, lng: -74.0134,
     precio: 0,
     nota: '',
@@ -433,6 +470,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Museo Nacional del Indígena Americano',
+    wiki: 'National Museum of the American Indian',
     lat: 40.7043, lng: -74.0135,
     precio: 0,
     nota: 'Entrada libre, sin reserva.',
@@ -444,6 +482,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Battery Park',
+    wiki: 'The Battery (Manhattan)',
     lat: 40.7033, lng: -74.0170,
     precio: 0,
     nota: '',
@@ -455,6 +494,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Staten Island Ferry',
+    wiki: 'Staten Island Ferry',
     lat: 40.7013, lng: -74.0134,
     precio: 0,
     nota: 'Gratis desde 1997.',
@@ -466,6 +506,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Estatua de la Libertad y Ellis Island',
+    wiki: 'Liberty Island',
     lat: 40.6892, lng: -74.0445,
     precio: 25.5,
     nota: 'Incluye el ferry y las dos islas. El pedestal se reserva aparte, sin costo extra.',

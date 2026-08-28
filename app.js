@@ -52,6 +52,7 @@ lista.innerHTML = ZONAS.map((zona) => {
         <div class="stop__body" id="cuerpo-${p.n}" role="region" aria-label="${esc(p.nombre)}">
           <div>
             <div class="stop__panel">
+              <div class="galeria" aria-label="Fotos de ${esc(p.nombre)}"></div>
               <p class="stop__desc">${esc(p.desc)}</p>
               <div class="stop__meta">
                 <span class="chip">Entrada <strong>${plata(p.precio)}</strong></span>
@@ -92,11 +93,16 @@ L.tileLayer(`${ESRI}/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, {
   maxZoom: 16,
 }).addTo(mapa)
 
-const limites = L.latLngBounds(paradas.map((p) => [p.lat, p.lng]))
+/* Encuadrar los 41 puntos mete media Nueva Jersey en pantalla: el arranque va
+   sobre el corazón de la isla, de Battery hasta el norte de Central Park. */
+const NUCLEO = L.latLngBounds([
+  [40.7, -74.022],
+  [40.803, -73.938],
+])
 
 const verTodo = () => {
   mapa.invalidateSize({ animate: false })
-  mapa.fitBounds(limites, { padding: [40, 40], animate: false })
+  mapa.fitBounds(NUCLEO, { padding: [24, 24], animate: false })
 }
 
 verTodo()
@@ -125,6 +131,76 @@ paradas.forEach((p) => {
   marcador.bindTooltip(`${p.n} · ${p.nombre}`, { direction: 'top', offset: [0, -16] })
   marcador.on('click', () => abrir(p.n, { desde: 'mapa' }))
   marcadores.set(p.n, marcador)
+})
+
+/* ── Fotos ─────────────────────────────────────────────────────────── */
+
+const COMMONS = 'https://commons.wikimedia.org/wiki'
+const archivoUrl = (archivo, ancho) =>
+  `${COMMONS}/Special:FilePath/${encodeURIComponent(archivo)}?width=${ancho}`
+const paginaUrl = (archivo) => `${COMMONS}/File:${encodeURIComponent(archivo)}`
+
+const fotosDe = (p) => (typeof FOTOS === 'undefined' ? [] : FOTOS[p.wiki] ?? [])
+
+/* Las miniaturas se arman recién al abrir la ficha: 246 fotos en el HTML de
+   entrada serían 246 pedidos que casi nadie va a mirar. */
+function montarGaleria(n) {
+  const hueco = document.querySelector(`#parada-${n} .galeria`)
+  if (!hueco || hueco.dataset.montada) return
+
+  const p = paradas[n - 1]
+  hueco.dataset.montada = '1'
+  hueco.innerHTML = fotosDe(p)
+    .map(
+      (f, i) => `
+      <button type="button" class="galeria__foto" data-parada="${n}" data-foto="${i}">
+        <img src="${archivoUrl(f.archivo, 560)}" alt="${esc(p.nombre)}, foto ${i + 1}" loading="lazy" decoding="async">
+      </button>`,
+    )
+    .join('')
+}
+
+const visor = document.getElementById('visor')
+const visorFoto = document.getElementById('visor-foto')
+const visorPie = document.getElementById('visor-pie')
+let mirando = null
+
+function verFoto(n, i) {
+  const p = paradas[n - 1]
+  const lote = fotosDe(p)
+  if (!lote.length) return
+
+  const idx = (i + lote.length) % lote.length
+  const f = lote[idx]
+  mirando = { n, i: idx }
+
+  visorFoto.src = archivoUrl(f.archivo, 1600)
+  visorFoto.alt = `${p.nombre}, foto ${idx + 1} de ${lote.length}`
+  visorPie.innerHTML = `
+    <span class="visor__lugar">${esc(p.nombre)}</span>
+    <span class="visor__credito">
+      ${esc(f.autor)} · ${esc(f.licencia)} ·
+      <a href="${paginaUrl(f.archivo)}" target="_blank" rel="noopener noreferrer">Ver en Commons ↗</a>
+    </span>
+    <span class="visor__cuenta">${idx + 1} / ${lote.length}</span>`
+
+  visor.hidden = false
+  document.getElementById('visor-cerrar').focus()
+}
+
+function cerrarVisor() {
+  visor.hidden = true
+  visorFoto.removeAttribute('src')
+  mirando = null
+}
+
+const pasar = (paso) => mirando && verFoto(mirando.n, mirando.i + paso)
+
+document.getElementById('visor-cerrar').addEventListener('click', cerrarVisor)
+document.getElementById('visor-antes').addEventListener('click', () => pasar(-1))
+document.getElementById('visor-luego').addEventListener('click', () => pasar(1))
+visor.addEventListener('click', (e) => {
+  if (e.target === visor || e.target.classList.contains('visor__marco')) cerrarVisor()
 })
 
 /* ── El cajón (solo en pantalla angosta) ───────────────────────────── */
@@ -189,6 +265,7 @@ function abrir(n, { desde } = {}) {
   if (activa !== null) pintar(activa, false)
   activa = n
   pintar(n, true)
+  montarGaleria(n)
   reset.classList.add('is-on')
 
   const p = paradas[n - 1]
@@ -204,6 +281,12 @@ function abrir(n, { desde } = {}) {
 }
 
 lista.addEventListener('click', (e) => {
+  const miniatura = e.target.closest('.galeria__foto')
+  if (miniatura) {
+    verFoto(Number(miniatura.dataset.parada), Number(miniatura.dataset.foto))
+    return
+  }
+
   const head = e.target.closest('.stop__head')
   if (!head) return
   abrir(Number(head.closest('.stop').id.replace('parada-', '')))
@@ -215,6 +298,13 @@ reset.addEventListener('click', () => {
 })
 
 document.addEventListener('keydown', (e) => {
+  if (!visor.hidden) {
+    if (e.key === 'Escape') cerrarVisor()
+    if (e.key === 'ArrowLeft') pasar(-1)
+    if (e.key === 'ArrowRight') pasar(1)
+    return
+  }
+
   if (e.key !== 'Escape') return
   if (angosto() && panel.classList.contains('is-open')) cerrarCajon()
   else cerrar()
