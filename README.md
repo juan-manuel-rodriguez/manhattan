@@ -1,7 +1,8 @@
 # Manhattan de arriba hacia abajo
 
-Guía de 51 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
-fotos, precios de entrada y cuáles son gratis.
+Guía de 57 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
+fotos, precios de entrada y cuáles son gratis. Más los outlets de las afueras, para
+comprar barato.
 
 **→ [juan-manuel-rodriguez.github.io/manhattan](https://juan-manuel-rodriguez.github.io/manhattan/)**
 
@@ -30,6 +31,7 @@ Todo el contenido está en [`data/lugares.js`](data/lugares.js). Cada lugar es u
 {
   zona: 'midtown',              // id de una zona de ZONAS, define el orden y el grupo
   nombre: 'Grand Central Terminal',
+  tipo: 'arquitectura',         // define el icono; los tipos están en ICONOS, en app.js
   wiki: 'Grand Central Terminal', // de dónde salen las fotos (ver abajo)
   lat: 40.7527, lng: -73.9772,
   precio: 0,                    // dólares, entrada general adulto. 0 es gratis
@@ -42,8 +44,23 @@ Todo el contenido está en [`data/lugares.js`](data/lugares.js). Cada lugar es u
 ```
 
 Dentro de cada zona los lugares se muestran en el orden del archivo, así que para mover
-uno de lugar en el recorrido alcanza con moverlo en el array. La numeración, el color,
-el total y los marcadores del mapa salen de ahí solos.
+uno de lugar en el recorrido alcanza con moverlo en el array. La numeración, el color y
+los marcadores del mapa salen de ahí solos.
+
+## Los iconos de cada lugar
+
+El `tipo` elige el icono, en la lista y en el marcador del mapa. Los iconos son de
+[Material Symbols](https://fonts.google.com/icons), que llega como fuente desde Google
+Fonts **recortada a los iconos que se usan**: la lista está en el parámetro `icon_names`
+del `<link>` de [`index.html`](index.html). Al agregar un tipo nuevo hay que sumarlo en
+dos lados, `ICONOS` en [`app.js`](app.js) y ese `icon_names`, o el icono no viene en la
+fuente.
+
+Los tipos que existen hoy: `museo`, `mirador`, `parque`, `iglesia`, `arquitectura`,
+`monumento`, `paseo`, `barrio`, `comida`, `compras`, `transporte`, `animales`, `musica`.
+
+La zona `afuera` es la única que **no** va ordenada de norte a sur —los outlets están en
+tres estados distintos— sino por lo lejos que quedan de Manhattan.
 
 Los precios son de referencia y cambian seguido: conviene confirmarlos en el sitio
 oficial de cada lugar antes de ir.

@@ -23,7 +23,7 @@ const DESDE = 1985 // grabados, litografías y fotos de archivo quedan afuera
 // Escudos, mapas, planos e iconos: nada de esto muestra cómo es el lugar.
 // "weesenstein" es un invernadero alemán mal archivado en Conservatory Garden.
 const DESCARTAR =
-  /(map|mapa|logo|seal|icon|flag|coat[_ ]of|plan|diagram|locator|symbol|blank|arrow|button|pictogram|padlock|signature|movie|trailer|screenshot|chart|graph|floorplan|schematic|patch|emblem|insignia|badge|stub|question|portal|disambig|ambox|osm|openstreetmap|poster|postcard|engraving|lithograph|drawing|painting|sketch|blueprint|circa|weesenstein|\b1[6-9]\d{2}\b)/i
+  /(map|mapa|logo|seal|icon|flag|coat[_ ]of|plan|diagram|locator|symbol|blank|arrow|button|pictogram|padlock|signature|movie|trailer|screenshot|chart|graph|floorplan|schematic|patch|emblem|insignia|badge|stub|question|portal|disambig|ambox|osm|openstreetmap|poster|postcard|engraving|lithograph|drawing|painting|sketch|blueprint|circa|weesenstein|future[_ ]site|under[_ ]construction|\b1[6-9]\d{2}\b)/i
 
 const AGENTE = 'manhattan-guide/1.0 (https://github.com/juan-manuel-rodriguez/manhattan)'
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms))

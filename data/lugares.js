@@ -10,6 +10,7 @@ const ZONAS = [
   { id: 'midtown', nombre: 'Midtown', sub: 'De la 59 a la 23' },
   { id: 'village', nombre: 'Chelsea · Village · SoHo', sub: 'El Manhattan de casas bajas' },
   { id: 'lower', nombre: 'Lower Manhattan', sub: 'Financial District y la punta de la isla' },
+  { id: 'afuera', nombre: 'Fuera de la isla', sub: 'Outlets, del más cercano al más lejos' },
 ]
 
 const LUGARES = [
@@ -17,6 +18,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'The Met Cloisters',
+    tipo: 'museo',
     wiki: 'The Cloisters',
     lat: 40.8649, lng: -73.9318,
     precio: 30,
@@ -29,6 +31,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'Little Red Lighthouse',
+    tipo: 'monumento',
     wiki: 'Category:Little Red Lighthouse',
     lat: 40.8501, lng: -73.9474,
     precio: 0,
@@ -41,6 +44,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'High Bridge y la torre de agua',
+    tipo: 'paseo',
     wiki: 'High Bridge (New York City)',
     lat: 40.8420, lng: -73.9302,
     precio: 0,
@@ -53,6 +57,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'Morris-Jumel Mansion',
+    tipo: 'monumento',
     wiki: 'Morris–Jumel Mansion',
     lat: 40.8342, lng: -73.9385,
     precio: 10,
@@ -65,6 +70,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'Apollo Theater y Harlem',
+    tipo: 'musica',
     wiki: 'Apollo Theater',
     lat: 40.8099, lng: -73.9501,
     precio: 0,
@@ -77,6 +83,7 @@ const LUGARES = [
   {
     zona: 'upper',
     nombre: 'Catedral de San Juan el Divino',
+    tipo: 'iglesia',
     wiki: 'Cathedral of Saint John the Divine',
     lat: 40.8038, lng: -73.9619,
     precio: 15,
@@ -91,6 +98,7 @@ const LUGARES = [
   {
     zona: 'parque',
     nombre: 'Conservatory Garden',
+    tipo: 'parque',
     wiki: 'Category:Conservatory Garden',
     lat: 40.7940, lng: -73.9520,
     precio: 0,
@@ -103,6 +111,7 @@ const LUGARES = [
   {
     zona: 'parque',
     nombre: 'Reservoir Jacqueline Kennedy Onassis',
+    tipo: 'parque',
     wiki: 'Category:Jacqueline Kennedy Onassis Reservoir',
     lat: 40.7857, lng: -73.9625,
     precio: 0,
@@ -115,6 +124,7 @@ const LUGARES = [
   {
     zona: 'parque',
     nombre: 'Belvedere Castle',
+    tipo: 'mirador',
     wiki: 'Belvedere Castle',
     lat: 40.7797, lng: -73.9691,
     precio: 0,
@@ -127,6 +137,7 @@ const LUGARES = [
   {
     zona: 'parque',
     nombre: 'El lago y el Bow Bridge',
+    tipo: 'parque',
     wiki: 'Category:Bow Bridge (Central Park)',
     lat: 40.7757, lng: -73.9713,
     precio: 0,
@@ -139,6 +150,7 @@ const LUGARES = [
   {
     zona: 'parque',
     nombre: 'Strawberry Fields',
+    tipo: 'parque',
     wiki: 'Category:Strawberry Fields memorial',
     lat: 40.7756, lng: -73.9748,
     precio: 0,
@@ -151,6 +163,7 @@ const LUGARES = [
   {
     zona: 'parque',
     nombre: 'Bethesda Terrace y la fuente',
+    tipo: 'arquitectura',
     wiki: 'Category:Bethesda Terrace',
     lat: 40.7740, lng: -73.9709,
     precio: 0,
@@ -163,6 +176,7 @@ const LUGARES = [
   {
     zona: 'parque',
     nombre: 'Central Park Zoo',
+    tipo: 'animales',
     wiki: 'Category:Central Park Zoo',
     lat: 40.7678, lng: -73.9718,
     precio: 20,
@@ -177,6 +191,7 @@ const LUGARES = [
   {
     zona: 'uws',
     nombre: 'Museo Americano de Historia Natural',
+    tipo: 'museo',
     wiki: 'American Museum of Natural History',
     lat: 40.7813, lng: -73.9740,
     precio: 28,
@@ -191,6 +206,7 @@ const LUGARES = [
   {
     zona: 'ues',
     nombre: 'Museo Guggenheim',
+    tipo: 'museo',
     wiki: 'Solomon R. Guggenheim Museum',
     lat: 40.7830, lng: -73.9590,
     precio: 30,
@@ -203,6 +219,7 @@ const LUGARES = [
   {
     zona: 'ues',
     nombre: 'The Metropolitan Museum of Art',
+    tipo: 'museo',
     wiki: 'Metropolitan Museum of Art',
     lat: 40.7794, lng: -73.9632,
     precio: 30,
@@ -215,6 +232,7 @@ const LUGARES = [
   {
     zona: 'ues',
     nombre: 'The Frick Collection',
+    tipo: 'museo',
     wiki: 'Frick Collection',
     lat: 40.7712, lng: -73.9673,
     precio: 30,
@@ -229,6 +247,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Museo Intrepid',
+    tipo: 'museo',
     wiki: 'Intrepid Museum',
     lat: 40.7645, lng: -74.0000,
     precio: 36,
@@ -241,6 +260,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Tranvía a Roosevelt Island',
+    tipo: 'transporte',
     wiki: 'Roosevelt Island Tramway',
     lat: 40.7614, lng: -73.9640,
     precio: 2.9,
@@ -253,6 +273,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'MoMA',
+    tipo: 'museo',
     wiki: 'Museum of Modern Art',
     lat: 40.7614, lng: -73.9776,
     precio: 30,
@@ -265,6 +286,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Top of the Rock',
+    tipo: 'mirador',
     wiki: '30 Rockefeller Plaza',
     lat: 40.7593, lng: -73.9794,
     precio: 40,
@@ -277,6 +299,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Rockefeller Center',
+    tipo: 'arquitectura',
     wiki: 'Rockefeller Center',
     lat: 40.7587, lng: -73.9787,
     precio: 0,
@@ -289,6 +312,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Catedral de San Patricio',
+    tipo: 'iglesia',
     wiki: 'St. Patrick\'s Cathedral (Manhattan)',
     lat: 40.7585, lng: -73.9760,
     precio: 0,
@@ -301,6 +325,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Times Square',
+    tipo: 'barrio',
     wiki: 'Times Square',
     lat: 40.7580, lng: -73.9855,
     precio: 0,
@@ -313,6 +338,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Vessel',
+    tipo: 'arquitectura',
     wiki: 'Category:Vessel (structure)',
     lat: 40.7540, lng: -74.0021,
     precio: 10,
@@ -324,7 +350,21 @@ const LUGARES = [
   },
   {
     zona: 'midtown',
+    nombre: 'B&H Photo Video',
+    tipo: 'compras',
+    wiki: 'B&H Photo',
+    lat: 40.7539, lng: -73.9963,
+    precio: 0,
+    nota: 'Cierra los sábados enteros, los viernes a la tarde y las fiestas judías.',
+    desc: 'El negocio de fotografía, video y audio más grande de Estados Unidos, ocupando media manzana de la Novena Avenida. Lo que comprás viaja en canastas por cintas transportadoras colgadas del techo hasta la caja.',
+    tiempo: '1 h 30',
+    tip: 'Lo maneja una comunidad judía ortodoxa y el horario lo sigue: revisá el calendario antes de ir, porque un sábado te encontrás con la persiana baja. Se puede probar todo antes de comprar.',
+    web: 'https://www.bhphotovideo.com',
+  },
+  {
+    zona: 'midtown',
     nombre: 'Edge',
+    tipo: 'mirador',
     wiki: 'Category:Edge (observation deck)',
     lat: 40.7536, lng: -74.0014,
     precio: 44,
@@ -337,6 +377,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Biblioteca Pública y Bryant Park',
+    tipo: 'arquitectura',
     wiki: 'New York Public Library Main Branch',
     lat: 40.7532, lng: -73.9822,
     precio: 0,
@@ -349,6 +390,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Grand Central Terminal',
+    tipo: 'arquitectura',
     wiki: 'Grand Central Terminal',
     lat: 40.7527, lng: -73.9772,
     precio: 0,
@@ -361,6 +403,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Summit One Vanderbilt',
+    tipo: 'mirador',
     wiki: 'One Vanderbilt',
     lat: 40.7527, lng: -73.9787,
     precio: 49,
@@ -373,6 +416,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Naciones Unidas',
+    tipo: 'monumento',
     wiki: 'Headquarters of the United Nations',
     lat: 40.7489, lng: -73.9680,
     precio: 26,
@@ -385,6 +429,7 @@ const LUGARES = [
   {
     zona: 'midtown',
     nombre: 'Empire State Building',
+    tipo: 'mirador',
     wiki: 'Empire State Building',
     lat: 40.7484, lng: -73.9857,
     precio: 44,
@@ -396,7 +441,21 @@ const LUGARES = [
   },
   {
     zona: 'midtown',
+    nombre: 'Nordstrom Rack',
+    tipo: 'compras',
+    wiki: 'Category:Nordstrom Rack',
+    lat: 40.7477, lng: -73.9895,
+    precio: 0,
+    nota: 'En Nueva York la ropa de menos de 110 dólares no paga impuesto de venta.',
+    desc: 'La versión de descuento de Nordstrom: saldos y sobrantes de temporada de la tienda grande, con la etiqueta mostrando el precio original al lado del rebajado. Dos pisos sobre la Sexta Avenida, a la altura de la 31.',
+    tiempo: '1 h',
+    tip: 'Queda a cinco cuadras del Empire State, así que entra bien en el mismo paseo. El stock rota rápido: lo que hoy no está, la semana que viene sí.',
+    web: 'https://stores.nordstromrack.com/us/ny/new-york/865-avenue-of-the-americas',
+  },
+  {
+    zona: 'midtown',
     nombre: 'Flatiron y Madison Square Park',
+    tipo: 'arquitectura',
     wiki: 'Flatiron Building',
     lat: 40.7411, lng: -73.9897,
     precio: 0,
@@ -411,6 +470,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'The High Line',
+    tipo: 'paseo',
     wiki: 'High Line',
     lat: 40.7480, lng: -74.0048,
     precio: 0,
@@ -423,6 +483,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Chelsea Market',
+    tipo: 'comida',
     wiki: 'Chelsea Market',
     lat: 40.7424, lng: -74.0061,
     precio: 0,
@@ -435,6 +496,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Little Island',
+    tipo: 'parque',
     wiki: 'Little Island at Pier 55',
     lat: 40.7420, lng: -74.0110,
     precio: 0,
@@ -447,6 +509,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Whitney Museum',
+    tipo: 'museo',
     wiki: 'Whitney Museum of American Art',
     lat: 40.7396, lng: -74.0089,
     precio: 30,
@@ -459,6 +522,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Washington Square Park y el Village',
+    tipo: 'parque',
     wiki: 'Washington Square Park',
     lat: 40.7308, lng: -73.9973,
     precio: 0,
@@ -471,6 +535,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'SoHo',
+    tipo: 'barrio',
     wiki: 'SoHo, Manhattan',
     lat: 40.7233, lng: -74.0030,
     precio: 0,
@@ -483,6 +548,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Little Italy',
+    tipo: 'barrio',
     wiki: 'Category:Little Italy, Manhattan',
     lat: 40.7191, lng: -73.9973,
     precio: 0,
@@ -495,6 +561,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Tenement Museum',
+    tipo: 'museo',
     wiki: 'Category:Lower East Side Tenement Museum',
     lat: 40.7188, lng: -73.9900,
     precio: 30,
@@ -507,6 +574,7 @@ const LUGARES = [
   {
     zona: 'village',
     nombre: 'Chinatown',
+    tipo: 'barrio',
     wiki: 'Chinatown, Manhattan',
     lat: 40.7158, lng: -73.9970,
     precio: 0,
@@ -521,6 +589,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'One World Observatory',
+    tipo: 'mirador',
     wiki: 'One World Trade Center',
     lat: 40.7127, lng: -74.0134,
     precio: 47,
@@ -533,6 +602,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Memorial y Museo del 11-S',
+    tipo: 'monumento',
     wiki: 'National September 11 Memorial & Museum',
     lat: 40.7115, lng: -74.0134,
     precio: 36,
@@ -545,6 +615,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Oculus',
+    tipo: 'arquitectura',
     wiki: 'World Trade Center Transportation Hub',
     lat: 40.7115, lng: -74.0110,
     precio: 0,
@@ -556,7 +627,21 @@ const LUGARES = [
   },
   {
     zona: 'lower',
+    nombre: 'Century 21',
+    tipo: 'compras',
+    wiki: 'Century 21 (department store)',
+    lat: 40.7103, lng: -74.0107,
+    precio: 0,
+    nota: 'En Nueva York la ropa de menos de 110 dólares no paga impuesto de venta.',
+    desc: 'La tienda de descuento más conocida de Nueva York: marcas de diseñador con hasta 65% menos, en cinco pisos frente al World Trade Center. Cerró en 2020 y volvió a abrir en la misma esquina en 2023.',
+    tiempo: '1 h 30',
+    tip: 'Hay que revolver, el stock es irregular. Los pisos de arriba, con carteras y zapatos, son los que valen el rato. Está a una cuadra del Oculus.',
+    web: 'https://c21stores.com',
+  },
+  {
+    zona: 'lower',
     nombre: 'Puente de Brooklyn',
+    tipo: 'paseo',
     wiki: 'Brooklyn Bridge',
     lat: 40.7061, lng: -73.9969,
     precio: 0,
@@ -569,6 +654,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'South Street Seaport',
+    tipo: 'comida',
     wiki: 'South Street Seaport',
     lat: 40.7061, lng: -74.0031,
     precio: 0,
@@ -581,6 +667,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Wall Street y el Toro',
+    tipo: 'monumento',
     wiki: 'Wall Street',
     lat: 40.7056, lng: -74.0134,
     precio: 0,
@@ -593,6 +680,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Museo Nacional del Indígena Americano',
+    tipo: 'museo',
     wiki: 'National Museum of the American Indian',
     lat: 40.7043, lng: -74.0135,
     precio: 0,
@@ -605,6 +693,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Battery Park',
+    tipo: 'parque',
     wiki: 'The Battery (Manhattan)',
     lat: 40.7033, lng: -74.0170,
     precio: 0,
@@ -617,6 +706,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Staten Island Ferry',
+    tipo: 'transporte',
     wiki: 'Staten Island Ferry',
     lat: 40.7013, lng: -74.0134,
     precio: 0,
@@ -629,6 +719,7 @@ const LUGARES = [
   {
     zona: 'lower',
     nombre: 'Estatua de la Libertad y Ellis Island',
+    tipo: 'monumento',
     wiki: 'Liberty Island',
     lat: 40.6892, lng: -74.0445,
     precio: 25.5,
@@ -637,5 +728,46 @@ const LUGARES = [
     tiempo: 'medio día',
     tip: 'Para subir a la corona hay que reservar con semanas de anticipación y pagar 25 dólares más. Son 162 escalones.',
     web: 'https://www.statueofliberty.org',
+  },
+
+  // ── Fuera de la isla ─────────────────────────────────────────────
+  {
+    zona: 'afuera',
+    nombre: 'Empire Outlets',
+    tipo: 'compras',
+    wiki: 'Empire Outlets',
+    lat: 40.6437, lng: -74.0733,
+    precio: 0,
+    nota: 'El ferry a Staten Island es gratis.',
+    desc: 'El único outlet dentro de la ciudad, pegado a la terminal del ferry en Staten Island. La ventaja es cómo se llega: veinticinco minutos de ferry gratis, pasando al lado de la Estatua de la Libertad.',
+    tiempo: '3 h con el ferry',
+    tip: 'Nunca terminó de llenarse y hay bastantes locales vacíos. Conviene como excusa para el paseo en ferry, no como viaje de compras en sí.',
+    web: 'https://www.empireoutlets.nyc',
+  },
+  {
+    zona: 'afuera',
+    nombre: 'The Mills at Jersey Gardens',
+    tipo: 'compras',
+    wiki: 'The Mills at Jersey Gardens',
+    lat: 40.6624, lng: -74.1698,
+    precio: 0,
+    nota: 'En Nueva Jersey la ropa y el calzado no pagan impuesto de venta, sin importar el precio.',
+    desc: 'El outlet más grande de Nueva Jersey, con unos 200 locales bajo techo. El argumento no son solo los descuentos: del otro lado del Hudson la ropa y el calzado no pagan impuesto de venta.',
+    tiempo: 'medio día',
+    tip: 'El micro 111 de NJ Transit sale de Port Authority y tarda unos 40 minutos. Al ser techado, es el que conviene si llueve o hace frío.',
+    web: 'https://www.simon.com/mall/the-mills-at-jersey-gardens',
+  },
+  {
+    zona: 'afuera',
+    nombre: 'Woodbury Common Premium Outlets',
+    tipo: 'compras',
+    wiki: 'Woodbury Common Premium Outlets',
+    lat: 41.3486, lng: -74.1206,
+    precio: 0,
+    nota: 'El micro desde Port Authority sale unos 45 dólares ida y vuelta.',
+    desc: 'El outlet grande al que va todo el mundo: 250 locales armados como un pueblo del valle del Hudson, con las marcas de lujo que en la Quinta Avenida cuestan el doble. Está a 80 km al norte de Manhattan.',
+    tiempo: 'todo el día',
+    tip: 'El micro de Coach USA sale de Port Authority y tarda una hora y cuarto. Andá temprano y entre semana: los sábados es una romería.',
+    web: 'https://www.premiumoutlets.com/outlet/woodbury-common',
   },
 ]

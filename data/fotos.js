@@ -793,6 +793,23 @@ const FOTOS = {
    "licencia": "CC BY-SA 4.0"
   }
  ],
+ "B&H Photo": [
+  {
+   "archivo": "B & H Photo Storefront (48206485446).jpg",
+   "autor": "Ajay Suresh from New York, NY, USA",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Visitors at the 2025 Bild Expo Presented by B&H Photo.jpg",
+   "autor": "Tzim78",
+   "licencia": "CC BY 4.0"
+  },
+  {
+   "archivo": "Main Stage talk at the 2025 Bild Expo Presented by B&H Photo.jpg",
+   "autor": "Tzim78",
+   "licencia": "CC BY 4.0"
+  }
+ ],
  "Category:Edge (observation deck)": [
   {
    "archivo": "30 Hudson Yards April 2022 001.jpg",
@@ -978,6 +995,38 @@ const FOTOS = {
    "archivo": "Looking Up at Empire State Building.JPG",
    "autor": "BigMac",
    "licencia": "CC BY-SA 3.0"
+  }
+ ],
+ "Category:Nordstrom Rack": [
+  {
+   "archivo": "20260108 141758 The Outlet Collection Seattle - Nordstrom Rack.jpg",
+   "autor": "Gayest Frogs",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "31st St 6th Av 01 - 855 Sixth Avenue.jpg",
+   "autor": "Tdorante10",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "31st St 6th Av 05 - 855 Sixth Avenue.jpg",
+   "autor": "Tdorante10",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Barricaded Union Square South (49964585268).jpg",
+   "autor": "Eden, Janine and Jim from New York City",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Borders Westlake, OH (9670638374).jpg",
+   "autor": "Mike Kalasnik from Fort Mill, USA",
+   "licencia": "CC BY-SA 2.0"
+  },
+  {
+   "archivo": "Countdown Red (52406112261).jpg",
+   "autor": "Eden, Janine and Jim from New York City",
+   "licencia": "CC BY 2.0"
   }
  ],
  "Flatiron Building": [
@@ -1396,6 +1445,18 @@ const FOTOS = {
    "licencia": "CC BY 3.0"
   }
  ],
+ "Century 21 (department store)": [
+  {
+   "archivo": "Inside Century 21.JPG",
+   "autor": "Mike Strand",
+   "licencia": "CC BY 3.0"
+  },
+  {
+   "archivo": "Century 21 Department Stores (51520729502).jpg",
+   "autor": "ajay_suresh",
+   "licencia": "CC BY 2.0"
+  }
+ ],
  "Brooklyn Bridge": [
   {
    "archivo": "BrooklynBridgeRampsMANH.jpg",
@@ -1617,6 +1678,62 @@ const FOTOS = {
   {
    "archivo": "Liberty Island Jul 2019 27.jpg",
    "autor": "Epicgenius",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Empire Outlets": [
+  {
+   "archivo": "Bay St Richmond Terr Borough Pl td (2022-06-19) 09.jpg",
+   "autor": "Tdorante10",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "The Mills at Jersey Gardens": [
+  {
+   "archivo": "The Mills at Jersey Gardens - panoramio (1).jpg",
+   "autor": "qwesy qwesy",
+   "licencia": "CC BY 3.0"
+  },
+  {
+   "archivo": "The Mills at Jersey Gardens, Food court - panoramio.jpg",
+   "autor": "qwesy qwesy",
+   "licencia": "CC BY 3.0"
+  },
+  {
+   "archivo": "Crowds at the Mills 04.jpg",
+   "autor": "Curlyrnd",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "The Mills - Blooming Dales.png",
+   "autor": "Curlyrnd",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "The Mills - Burlington Coat Factory.png",
+   "autor": "Curlyrnd",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "The Mills - Entrance.png",
+   "autor": "Curlyrnd",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Woodbury Common Premium Outlets": [
+  {
+   "archivo": "Woodbury Commons food court.jpg",
+   "autor": "NHRHS2010",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Woodbury Commons from US 6.jpg",
+   "autor": "Daniel Case",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Woodbury Common Premium Outlets Hudson Valley District.jpg",
+   "autor": "Fourc",
    "licencia": "CC BY-SA 4.0"
   }
  ]

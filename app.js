@@ -20,6 +20,42 @@ const plata = (precio) => {
 
 const angosto = () => window.matchMedia('(max-width: 900px)').matches
 
+/* Ligaduras de Material Symbols. Si agregás un tipo, sumá su icono a la lista
+   `icon_names` del <link> en index.html: la fuente viene recortada a esos. */
+const ICONOS = {
+  museo: 'museum',
+  mirador: 'visibility',
+  parque: 'park',
+  iglesia: 'church',
+  arquitectura: 'apartment',
+  monumento: 'tour',
+  paseo: 'directions_walk',
+  barrio: 'location_city',
+  comida: 'restaurant',
+  compras: 'attach_money',
+  transporte: 'tram',
+  animales: 'pets',
+  musica: 'theater_comedy',
+}
+
+const QUE_ES = {
+  museo: 'Museo',
+  mirador: 'Mirador',
+  parque: 'Parque',
+  iglesia: 'Iglesia',
+  arquitectura: 'Arquitectura',
+  monumento: 'Monumento',
+  paseo: 'Paseo',
+  barrio: 'Barrio',
+  comida: 'Comida',
+  compras: 'Compras',
+  transporte: 'Transporte',
+  animales: 'Animales',
+  musica: 'Música',
+}
+
+const icono = (tipo) => ICONOS[tipo] ?? 'tour'
+
 /* Sin origen a propósito: así cada app arranca desde el GPS de quien la abre.
    Apple Maps en iPhone y Mac, Google Maps en el resto. Siempre a pie. */
 const enApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)
@@ -54,6 +90,7 @@ lista.innerHTML = ZONAS.map((zona) => {
       <article class="stop" id="parada-${p.n}" style="--tier:${p.tier.color}">
         <button type="button" class="stop__head" aria-expanded="false" aria-controls="cuerpo-${p.n}">
           <span class="stop__bullet" aria-hidden="true">${p.n}</span>
+          <span class="ico stop__tipo" title="${QUE_ES[p.tipo] ?? ''}">${icono(p.tipo)}</span>
           <span class="stop__nombre">${esc(p.nombre)}</span>
           <span class="stop__precio">${plata(p.precio)}</span>
         </button>
@@ -133,7 +170,7 @@ paradas.forEach((p) => {
   const marcador = L.marker([p.lat, p.lng], {
     icon: L.divIcon({
       className: 'pin-wrap',
-      html: `<div class="pin" style="--tier-mapa:${p.tier.mapa}">${p.n}</div>`,
+      html: `<div class="pin" style="--tier-mapa:${p.tier.mapa}"><span class="ico">${icono(p.tipo)}</span></div>`,
       iconSize: [28, 28],
       iconAnchor: [14, 14],
     }),
@@ -141,7 +178,10 @@ paradas.forEach((p) => {
     title: p.nombre,
   }).addTo(mapa)
 
-  marcador.bindTooltip(`${p.n} · ${p.nombre}`, { direction: 'top', offset: [0, -16] })
+  marcador.bindTooltip(`${p.n} · ${p.nombre} · ${QUE_ES[p.tipo] ?? ''}`, {
+    direction: 'top',
+    offset: [0, -16],
+  })
   marcador.on('click', () => abrir(p.n, { desde: 'mapa' }))
   marcadores.set(p.n, marcador)
 })
