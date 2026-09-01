@@ -10,7 +10,8 @@ const ZONAS = [
   { id: 'midtown', nombre: 'Midtown', sub: 'De la 59 a la 23' },
   { id: 'village', nombre: 'Chelsea · Village · SoHo', sub: 'El Manhattan de casas bajas' },
   { id: 'lower', nombre: 'Lower Manhattan', sub: 'Financial District y la punta de la isla' },
-  { id: 'afuera', nombre: 'Fuera de la isla', sub: 'Outlets, del más cercano al más lejos' },
+  { id: 'jersey', nombre: 'Jersey City', sub: 'Cruzando el Hudson, a 15 minutos en PATH' },
+  { id: 'afuera', nombre: 'Outlets', sub: 'Para comprar barato, del más cercano al más lejos' },
 ]
 
 const LUGARES = [
@@ -730,7 +731,48 @@ const LUGARES = [
     web: 'https://www.statueofliberty.org',
   },
 
-  // ── Fuera de la isla ─────────────────────────────────────────────
+  // ── Jersey City ──────────────────────────────────────────────────
+  {
+    zona: 'jersey',
+    nombre: 'Loew\'s Jersey Theatre',
+    tipo: 'musica',
+    wiki: 'Loew\'s Jersey Theatre',
+    lat: 40.7328, lng: -74.0637,
+    precio: 10,
+    nota: 'Se entra por función; las de cine clásico rondan los 10 dólares.',
+    desc: 'Uno de los cinco Wonder Theatres que Loew\'s levantó en 1929: tres mil butacas, techo barroco, arañas de cristal y un órgano Wonder Morton original. Lo salvó de la topadora un grupo de vecinos que lo restauró a mano durante treinta años.',
+    tiempo: 'una función',
+    tip: 'Está sobre Journal Square, así que se llega caminando. Mirá la cartelera antes de ir: se entra cuando hay función, y el cine clásico sale menos que una entrada normal.',
+    web: 'https://www.loewsjersey.org',
+  },
+  {
+    zona: 'jersey',
+    nombre: 'India Square',
+    tipo: 'comida',
+    wiki: 'India Square',
+    lat: 40.7318, lng: -74.0736,
+    precio: 0,
+    nota: '',
+    desc: 'Le dicen Little Bombay: seis cuadras de Newark Avenue con la mayor concentración de comercios indios del hemisferio occidental. Restaurantes de cada región, joyerías de oro, mercados de especias y puestos de paan en la vereda.',
+    tiempo: '2 h',
+    tip: 'Es lo mejor y más barato que se come en Jersey City, y está a quince minutos a pie de Journal Square. Si caés en octubre o noviembre, la fiesta de Diwali corta la calle.',
+    web: 'https://en.wikipedia.org/wiki/India_Square',
+  },
+  {
+    zona: 'jersey',
+    nombre: 'Mana Contemporary',
+    tipo: 'museo',
+    wiki: 'Mana Contemporary',
+    lat: 40.7274, lng: -74.0640,
+    precio: 0,
+    nota: 'Entrada gratis; la visita guiada se reserva, y también es gratis.',
+    desc: 'Una fábrica de tabaco de 1900 convertida en cien mil metros cuadrados de arte contemporáneo: talleres de artistas que se pueden recorrer con ellos adentro trabajando, salas de exposición, una bóveda de obras y estudios de danza.',
+    tiempo: '2 h',
+    tip: 'Los días de puertas abiertas se entra a los talleres sin reservar. El resto de los días hay que pedir turno para la visita guiada.',
+    web: 'https://www.manacontemporary.com',
+  },
+
+  // ── Outlets ──────────────────────────────────────────────────────
   {
     zona: 'afuera',
     nombre: 'Empire Outlets',

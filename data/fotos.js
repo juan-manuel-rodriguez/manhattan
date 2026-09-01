@@ -1681,6 +1681,67 @@ const FOTOS = {
    "licencia": "CC BY-SA 4.0"
   }
  ],
+ "Loew's Jersey Theatre": [
+  {
+   "archivo": "LoewsJerseyClock.JPG",
+   "autor": "JimMillerJr",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Loew's Theatre, New Jersey.jpg",
+   "autor": "Wally Gobetz",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Lowes Jersey jeh.JPG",
+   "autor": "Jim.henderson",
+   "licencia": "Public domain"
+  },
+  {
+   "archivo": "Blvd Bridge west arch jeh.jpg",
+   "autor": "Jim.henderson",
+   "licencia": "CC0"
+  },
+  {
+   "archivo": "Monthly Signboard, Loew's Jersey Theatre.jpg",
+   "autor": "NUmber.three4",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Loew's Jersey Theatre, Jersey City, NJ, 1 30 09 - 8 of 18 (3241039389).jpg",
+   "autor": "Rob DiCaterino from Clifton, NJ, USA",
+   "licencia": "CC BY 2.0"
+  }
+ ],
+ "India Square": [
+  {
+   "archivo": "India Square JC jeh.JPG",
+   "autor": "Jim.henderson",
+   "licencia": "CC0"
+  },
+  {
+   "archivo": "India Square, Jersey City, New Jersey.jpg",
+   "autor": "Kiran891",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Mana Contemporary": [
+  {
+   "archivo": "Mana opnening.JPG",
+   "autor": "Shenweidancearts",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Mana Contemporary dance studio ext.JPG",
+   "autor": "Hudconja",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Mana Contemporary 2014.jpg",
+   "autor": "Selenawrites",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
  "Empire Outlets": [
   {
    "archivo": "Bay St Richmond Terr Borough Pl td (2022-06-19) 09.jpg",

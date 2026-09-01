@@ -1,8 +1,8 @@
 # Manhattan de arriba hacia abajo
 
-Guía de 57 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
-fotos, precios de entrada y cuáles son gratis. Más los outlets de las afueras, para
-comprar barato.
+Guía de 60 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
+fotos, precios de entrada y cuáles son gratis. Más lo que vale la pena en Jersey City y
+los outlets de las afueras.
 
 **→ [juan-manuel-rodriguez.github.io/manhattan](https://juan-manuel-rodriguez.github.io/manhattan/)**
 
