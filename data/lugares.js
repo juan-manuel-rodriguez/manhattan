@@ -11,6 +11,7 @@ const ZONAS = [
   { id: 'village', nombre: 'Chelsea · Village · SoHo', sub: 'El Manhattan de casas bajas' },
   { id: 'lower', nombre: 'Lower Manhattan', sub: 'Financial District y la punta de la isla' },
   { id: 'jersey', nombre: 'Jersey City', sub: 'Cruzando el Hudson, a 15 minutos en PATH' },
+  { id: 'viaje', nombre: 'Vale el viaje', sub: 'Lejos de la ciudad, pero valen el día entero' },
   { id: 'afuera', nombre: 'Outlets', sub: 'Para comprar barato, del más cercano al más lejos' },
 ]
 
@@ -770,6 +771,21 @@ const LUGARES = [
     tiempo: '2 h',
     tip: 'Los días de puertas abiertas se entra a los talleres sin reservar. El resto de los días hay que pedir turno para la visita guiada.',
     web: 'https://www.manacontemporary.com',
+  },
+
+  // ── Vale el viaje ────────────────────────────────────────────────
+  {
+    zona: 'viaje',
+    nombre: 'BAPS Swaminarayan Akshardham',
+    tipo: 'templo',
+    wiki: 'Swaminarayan Akshardham (Robbinsville)',
+    lat: 40.2542, lng: -74.5778,
+    precio: 0,
+    nota: 'Entrada gratis. Cierra los martes, y los fines de semana hay que reservar turno.',
+    desc: 'El templo hindú más grande construido fuera de la India en la era moderna: doce años de obra, piedra caliza y mármol talladas a mano por voluntarios, casi diez mil estatuas y un salón central que se sostiene sin una sola pieza de acero. Abrió en 2023 en medio del campo de Nueva Jersey.',
+    tiempo: '2 a 3 h',
+    tip: 'Cómo ir: PATH hasta Newark Penn, tren Northeast Corridor de NJ Transit hasta Hamilton y quince minutos de taxi; en auto es una hora y cuarto por el Turnpike. Con la ropa no hay excepciones: hombros, pecho, espalda y rodillas tapados, y al Mahamandir se entra descalzo.',
+    web: 'https://usa.akshardham.org/visit',
   },
 
   // ── Outlets ──────────────────────────────────────────────────────

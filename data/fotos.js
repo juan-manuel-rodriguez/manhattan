@@ -217,12 +217,12 @@ const FOTOS = {
    "licencia": "CC BY 4.0"
   },
   {
-   "archivo": "Centeal Park Conservatory Garden 02.jpg",
+   "archivo": "Centeal Park Conservatory Garden 03.jpg",
    "autor": "Kidfly182",
    "licencia": "CC BY 4.0"
   },
   {
-   "archivo": "Centeal Park Conservatory Garden 03.jpg",
+   "archivo": "Centeal Park Conservatory Garden 04.jpg",
    "autor": "Kidfly182",
    "licencia": "CC BY 4.0"
   }
@@ -1739,6 +1739,38 @@ const FOTOS = {
   {
    "archivo": "Mana Contemporary 2014.jpg",
    "autor": "Selenawrites",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Swaminarayan Akshardham (Robbinsville)": [
+  {
+   "archivo": "Mahamandir-dusk-scaled.jpg",
+   "autor": "BAPS Swaminarayan Sanstha",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Nilkanth.Varni.NJ.jpg",
+   "autor": "Ekem",
+   "licencia": "CC0"
+  },
+  {
+   "archivo": "Traditional Hindu Mandir.jpg",
+   "autor": "Doglover.Coton",
+   "licencia": "CC0"
+  },
+  {
+   "archivo": "Traditional Stepped Pond.jpg",
+   "autor": "Doglover.Coton",
+   "licencia": "CC0"
+  },
+  {
+   "archivo": "The Grand Centerpiece.jpg",
+   "autor": "Doglover.Coton",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "A space of serenity.jpg",
+   "autor": "Doglover.Coton",
    "licencia": "CC BY-SA 4.0"
   }
  ],

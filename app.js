@@ -27,6 +27,7 @@ const ICONOS = {
   mirador: 'visibility',
   parque: 'park',
   iglesia: 'church',
+  templo: 'temple_hindu',
   arquitectura: 'apartment',
   monumento: 'tour',
   paseo: 'directions_walk',
@@ -43,6 +44,7 @@ const QUE_ES = {
   mirador: 'Mirador',
   parque: 'Parque',
   iglesia: 'Iglesia',
+  templo: 'Templo',
   arquitectura: 'Arquitectura',
   monumento: 'Monumento',
   paseo: 'Paseo',
@@ -57,12 +59,14 @@ const QUE_ES = {
 const icono = (tipo) => ICONOS[tipo] ?? 'tour'
 
 /* Sin origen a propósito: así cada app arranca desde el GPS de quien la abre.
-   Apple Maps en iPhone y Mac, Google Maps en el resto. Siempre a pie. */
+   Apple Maps en iPhone y Mac, Google Maps en el resto. En transporte público, que
+   es como se llega a todo acá: a pie no hay ruta hasta un outlet a 80 km, y para
+   las dos cuadras las dos apps ofrecen caminar igual. */
 const enApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)
 const comoLlegar = (p) =>
   enApple
-    ? `https://maps.apple.com/?daddr=${p.lat},${p.lng}&dirflg=w`
-    : `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}&travelmode=walking`
+    ? `https://maps.apple.com/?daddr=${p.lat},${p.lng}&dirflg=r`
+    : `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}&travelmode=transit`
 
 /* ── Datos ordenados como se recorren ──────────────────────────────── */
 

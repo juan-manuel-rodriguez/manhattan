@@ -1,8 +1,8 @@
 # Manhattan de arriba hacia abajo
 
-Guía de 60 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
-fotos, precios de entrada y cuáles son gratis. Más lo que vale la pena en Jersey City y
-los outlets de las afueras.
+Guía de 61 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
+fotos, precios de entrada y cuáles son gratis. Más lo que vale la pena en Jersey City,
+los outlets de las afueras y alguna excursión que justifica el día.
 
 **→ [juan-manuel-rodriguez.github.io/manhattan](https://juan-manuel-rodriguez.github.io/manhattan/)**
 
@@ -56,8 +56,9 @@ del `<link>` de [`index.html`](index.html). Al agregar un tipo nuevo hay que sum
 dos lados, `ICONOS` en [`app.js`](app.js) y ese `icon_names`, o el icono no viene en la
 fuente.
 
-Los tipos que existen hoy: `museo`, `mirador`, `parque`, `iglesia`, `arquitectura`,
-`monumento`, `paseo`, `barrio`, `comida`, `compras`, `transporte`, `animales`, `musica`.
+Los tipos que existen hoy: `museo`, `mirador`, `parque`, `iglesia`, `templo`,
+`arquitectura`, `monumento`, `paseo`, `barrio`, `comida`, `compras`, `transporte`,
+`animales`, `musica`.
 
 La zona `afuera` es la única que **no** va ordenada de norte a sur —los outlets están en
 tres estados distintos— sino por lo lejos que quedan de Manhattan.
