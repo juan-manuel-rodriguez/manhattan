@@ -483,6 +483,24 @@ function cambiarCapa(clave) {
 
 botonesCapa.forEach((boton) => boton.addEventListener('click', () => cambiarCapa(boton.dataset.capaBoton)))
 
+/* Atracciones es la capa de entrada, también cuando el celular devuelve la página como
+   quedó. La media hora de margen es para no perder la ficha al ir y volver de Maps. */
+const AUSENCIA = 30 * 60 * 1000
+let ocultaDesde = null
+
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) cambiarCapa('atracciones')
+})
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    ocultaDesde = Date.now()
+    return
+  }
+  if (ocultaDesde !== null && Date.now() - ocultaDesde > AUSENCIA) cambiarCapa('atracciones')
+  ocultaDesde = null
+})
+
 /* ── Dónde estoy ───────────────────────────────────────────────────── */
 
 const botonYo = document.getElementById('map-yo')
