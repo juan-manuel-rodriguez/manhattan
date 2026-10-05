@@ -876,34 +876,34 @@ const FOTOS = {
  ],
  "Grand Central Terminal": [
   {
-   "archivo": "GCM 2019.jpg",
-   "autor": "Ɱ",
+   "archivo": "Image-Grand central Station Outside Night 2.jpg",
+   "autor": "Fcb981 ; Eric Baetscher (attribution required)",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Grand Central Terminal MetLife Building Park Ave viaduct Summer Streets.jpg",
+   "autor": "Beyond My Ken",
    "licencia": "CC BY-SA 4.0"
   },
   {
-   "archivo": "GCT Market 3.jpg",
-   "autor": "Ɱ",
+   "archivo": "USA-NYC-Grand Central Terminal Clock.jpg",
+   "autor": "Ingfbruno",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "100Years 5900 (8435665301).jpg",
+   "autor": "Metropolitan Transportation Authority of the State of New York",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Grand Central Terminal, New York 2017 45.jpg",
+   "autor": "Photograph by Mike Peel (www.mikepeel.net).",
    "licencia": "CC BY-SA 4.0"
   },
   {
    "archivo": "Tournament of Champions Squash 2012.jpg",
    "autor": "julesgriff",
    "licencia": "CC BY-SA 2.0"
-  },
-  {
-   "archivo": "GCT SMO 3.jpg",
-   "autor": "Ɱ",
-   "licencia": "CC BY-SA 4.0"
-  },
-  {
-   "archivo": "GCT SMO.jpg",
-   "autor": "Ɱ",
-   "licencia": "CC BY-SA 4.0"
-  },
-  {
-   "archivo": "GCT Dining.jpg",
-   "autor": "Ɱ",
-   "licencia": "CC BY-SA 4.0"
   }
  ],
  "One Vanderbilt": [
@@ -1619,34 +1619,34 @@ const FOTOS = {
  ],
  "Staten Island Ferry": [
   {
-   "archivo": "Spirit of America - Staten Island Ferry.jpg",
-   "autor": "InSapphoWeTrust",
-   "licencia": "CC BY-SA 2.0"
-  },
-  {
-   "archivo": "MV John F Kennedy November 2015.jpg",
-   "autor": "Godsfriendchuck",
-   "licencia": "CC BY-SA 4.0"
-  },
-  {
-   "archivo": "Staten Island Ferry (New York).jpg",
-   "autor": "Roland Arhelger",
-   "licencia": "CC BY-SA 4.0"
-  },
-  {
-   "archivo": "Southern Manhattan from Staten Island ferry.jpg",
-   "autor": "Someone35",
-   "licencia": "CC BY-SA 3.0"
-  },
-  {
    "archivo": "69stpier5bbtjeh.JPG",
    "autor": "Jim.henderson",
    "licencia": "Public domain"
   },
   {
+   "archivo": "Staten Island Ferry Crash 2.jpg",
+   "autor": "United States Coast Guard, PA2 Mike Hvozda",
+   "licencia": "Public domain"
+  },
+  {
+   "archivo": "Staten Island Ferry terminal.jpg",
+   "autor": "Daniel Schwen",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
    "archivo": "St George seaside jeh.jpg",
    "autor": "Jim.henderson",
    "licencia": "CC0"
+  },
+  {
+   "archivo": "New York City Staten Island Ferry.jpg",
+   "autor": "Norbert Nagel, Mörfelden-Walldorf, Germany",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Southern Manhattan from Staten Island ferry.jpg",
+   "autor": "Someone35",
+   "licencia": "CC BY-SA 3.0"
   }
  ],
  "Liberty Island": [
@@ -1681,6 +1681,18 @@ const FOTOS = {
    "licencia": "CC BY-SA 4.0"
   }
  ],
+ "India Square": [
+  {
+   "archivo": "India Square JC jeh.JPG",
+   "autor": "Jim.henderson",
+   "licencia": "CC0"
+  },
+  {
+   "archivo": "India Square, Jersey City, New Jersey.jpg",
+   "autor": "Kiran891",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
  "Loew's Jersey Theatre": [
   {
    "archivo": "LoewsJerseyClock.JPG",
@@ -1711,18 +1723,6 @@ const FOTOS = {
    "archivo": "Loew's Jersey Theatre, Jersey City, NJ, 1 30 09 - 8 of 18 (3241039389).jpg",
    "autor": "Rob DiCaterino from Clifton, NJ, USA",
    "licencia": "CC BY 2.0"
-  }
- ],
- "India Square": [
-  {
-   "archivo": "India Square JC jeh.JPG",
-   "autor": "Jim.henderson",
-   "licencia": "CC0"
-  },
-  {
-   "archivo": "India Square, Jersey City, New Jersey.jpg",
-   "autor": "Kiran891",
-   "licencia": "CC BY-SA 4.0"
   }
  ],
  "Mana Contemporary": [
@@ -1828,6 +1828,164 @@ const FOTOS = {
    "archivo": "Woodbury Common Premium Outlets Hudson Valley District.jpg",
    "autor": "Fourc",
    "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Sylvia's Restaurant of Harlem": [
+  {
+   "archivo": "Harlem - Sylvia's Restaurant (48555310372).jpg",
+   "autor": "Ajay Suresh from New York, NY, USA",
+   "licencia": "CC BY 2.0"
+  }
+ ],
+ "Grand Central Oyster Bar & Restaurant": [
+  {
+   "archivo": "The Oyster Bar, Grand Central Terminal, New York City (4057303042).jpg",
+   "autor": "Jazz Guy from New Jersey, United States",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "GCT OB 2.jpg",
+   "autor": "Ɱ",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Category:Shake Shack (Madison Square Park)": [
+  {
+   "archivo": "Holiday Shake Shack (51807217440).jpg",
+   "autor": "Eden, Janine and Jim from New York City",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Madison Square Winter (51806605823).jpg",
+   "autor": "Eden, Janine and Jim from New York City",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Shake Shack Madison Square.jpg",
+   "autor": "Beyond My Ken",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Shake Shack Night (53103585496).jpg",
+   "autor": "Eden, Janine and Jim from New York City",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "The Shake Shack.JPG",
+   "autor": "Ehedaya (talk)Ehedaya",
+   "licencia": "Public domain"
+  },
+  {
+   "archivo": "Winter in NYC 129 (90478023).jpg",
+   "autor": "Marcy Hargan from New York City (Manhattan), USA",
+   "licencia": "CC BY 2.0"
+  }
+ ],
+ "Joe's Pizza": [
+  {
+   "archivo": "Joe's Pizza, Greenwich Village, NYC.jpg",
+   "autor": "Steam Pipe Trunk Distribution Venue",
+   "licencia": "CC BY 2.0"
+  }
+ ],
+ "Balthazar (restaurant)": [
+  {
+   "archivo": "Onion soup, Balthazar.jpg",
+   "autor": "Ralph Daily",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Balthazar on Spring Street.jpg",
+   "autor": "Ralph Daily",
+   "licencia": "CC BY 2.0"
+  }
+ ],
+ "Russ & Daughters": [
+  {
+   "archivo": "Russ and Daughters.png",
+   "autor": "Elizabeth Goodspeed",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Russ and Daughters Café Mensch.jpg",
+   "autor": "Coalfather",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Russ & Daughters (51624125108).jpg",
+   "autor": "ajay_suresh",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Josh Russ Tupper and Niki Russ Federman.jpg",
+   "autor": "Chive Cream Cheese",
+   "licencia": "CC BY-SA 4.0"
+  }
+ ],
+ "Katz's Delicatessen": [
+  {
+   "archivo": "Harry und Sally bei Katz' Deli.JPG",
+   "autor": "Erika39",
+   "licencia": "CC BY 3.0"
+  },
+  {
+   "archivo": "Pastrami Sandwich.jpg",
+   "autor": "Zheng Zhou",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Katz's Delicatessen (51623899326).jpg",
+   "autor": "ajay_suresh",
+   "licencia": "CC BY 2.0"
+  },
+  {
+   "archivo": "Corned Beef Sandwich.jpg",
+   "autor": "Zheng Zhou",
+   "licencia": "CC BY-SA 4.0"
+  },
+  {
+   "archivo": "Katzs Delicatessen Ticket 114-388.png",
+   "autor": "Unknown authorUnknown author",
+   "licencia": "Public domain"
+  }
+ ],
+ "Nom Wah Tea Parlor": [
+  {
+   "archivo": "Nom Wah Tea Parlor in New York City Chinatown.jpg",
+   "autor": "Bagelpigeon",
+   "licencia": "CC0"
+  }
+ ],
+ "Fraunces Tavern": [
+  {
+   "archivo": "Frauncestavern.JPG",
+   "autor": "Jim.henderson",
+   "licencia": "Public domain"
+  },
+  {
+   "archivo": "Dining room at Fraunces Tavern.JPG",
+   "autor": "Billy Hathorn (talk)",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Fraunces Tavern and National Register of Historic Places.JPG",
+   "autor": "Billy Hathorn (talk)",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Fraunces Tavern plaque 01.jpg",
+   "autor": "Leonard J. DeFrancisci",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Fraunces Tavern sign detail.jpg",
+   "autor": "Tim Pierce",
+   "licencia": "CC BY-SA 3.0"
+  },
+  {
+   "archivo": "Fraunces Tavern, south side.jpg",
+   "autor": "Tim Pierce",
+   "licencia": "CC BY-SA 3.0"
   }
  ]
 }

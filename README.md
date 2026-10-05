@@ -1,8 +1,8 @@
 # Manhattan de arriba hacia abajo
 
-Guía de 61 lugares para visitar en Manhattan, ordenados de norte a sur, con mapa,
-fotos, precios de entrada y cuáles son gratis. Más lo que vale la pena en Jersey City,
-los outlets de las afueras y alguna excursión que justifica el día.
+Guía de Manhattan de norte a sur con dos mapas: **61 atracciones** —con fotos, precio
+de entrada y cuáles son gratis, más Jersey City, los outlets y alguna excursión— y
+**20 lugares para comer**, de los clásicos con cola a los baratos.
 
 **→ [juan-manuel-rodriguez.github.io/manhattan](https://juan-manuel-rodriguez.github.io/manhattan/)**
 
@@ -17,6 +17,9 @@ se agrandan en un visor a pantalla completa, con flechas y teclado.
 En pantalla ancha la lista es un panel fijo al costado del mapa. En el teléfono el mapa
 ocupa toda la pantalla y la lista pasa a ser un cajón lateral que se abre con el botón
 **Lugares**.
+
+El selector **Atracciones / Comida** de arriba del mapa cambia los pines y la lista. El
+hotel aparece en los dos, con un popup que tiene el **Cómo volver**.
 
 **Dónde estoy** pone tu posición en el mapa y la sigue mientras caminás, con el círculo
 de precisión que informa el GPS. Cada lugar tiene un **Cómo llegar** que abre la
@@ -42,6 +45,32 @@ Todo el contenido está en [`data/lugares.js`](data/lugares.js). Cada lugar es u
   web: 'https://...',           // sitio oficial
 }
 ```
+
+### Comida
+
+Está en [`data/comida.js`](data/comida.js), con las mismas zonas que las atracciones. Cambian
+dos campos: en vez de `precio` y `tiempo` lleva `nivel` y `popular`.
+
+```js
+{
+  zona: 'village',
+  nombre: 'Katz\'s Delicatessen',
+  tipo: 'sandwich',             // pizza, sandwich, asiatica, panaderia, callejera, restaurante, mariscos, tapas
+  wiki: 'Katz\'s Delicatessen', // opcional: sin artículo, la ficha sale sin galería
+  lat: 40.72234, lng: -73.98735,
+  nivel: 2,                     // 1 = $ (menos de 15 por persona), 2 = $$ (15 a 35), 3 = $$$ (35 a 70)
+  popular: true,                // estrella: los famosos de verdad, donde la cola es parte del plan
+  nota: '', desc: '...', tip: '...',
+  web: '',                      // opcional: vacío, no se muestra "Sitio oficial"
+}
+```
+
+El color del pin sigue diciendo cuánto sale: verde `$`, naranja `$$`, rojo `$$$`.
+
+### El hotel
+
+Una sola línea en [`data/hotel.js`](data/hotel.js): nombre, zona y coordenadas. El encuadre
+inicial del mapa se corre lo justo para incluirlo.
 
 Dentro de cada zona los lugares se muestran en el orden del archivo, así que para mover
 uno de lugar en el recorrido alcanza con moverlo en el array. La numeración, el color y

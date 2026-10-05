@@ -52,6 +52,8 @@ body {
 
 a { color: inherit; }
 
+[hidden] { display: none !important; }
+
 :focus-visible {
   outline: 2px solid var(--t-low);
   outline-offset: 3px;
@@ -138,6 +140,15 @@ a { color: inherit; }
 .dot--mid  { background: var(--t-mid); }
 .dot--high { background: var(--t-high); }
 
+.pesos-leyenda {
+  color: var(--tier);
+  font-family: var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.leyenda .estrella { margin-left: 0; }
+
 /* ─── Panel + mapa ─────────────────────────────────────────────────── */
 
 .split {
@@ -173,6 +184,44 @@ a { color: inherit; }
 .cajon-barra,
 .cajon-abrir,
 .velo { display: none; }
+
+.capas {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 500;
+  display: flex;
+  padding: 3px;
+  border: 1px solid var(--rail);
+  border-radius: 999px;
+  background: rgba(20, 22, 28, 0.94);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 12px rgba(8, 9, 12, 0.35);
+}
+
+.capas__boton {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.capas__boton .ico { font-size: 1rem; }
+.capas__boton:hover { color: var(--bone); }
+
+.capas__boton.is-on {
+  background: var(--bone);
+  color: var(--night);
+}
 
 .map-controles {
   position: absolute;
@@ -431,6 +480,17 @@ a { color: inherit; }
 }
 
 .stop__head:hover .stop__nombre { color: var(--tier); }
+
+/* La escala completa a la vista: los $ que no se pagan quedan apagados. */
+.pesos { letter-spacing: 0.04em; }
+.pesos__resto { opacity: 0.25; }
+
+.estrella {
+  margin-left: 0.35rem;
+  color: var(--t-low);
+  font-size: 0.95rem;
+  vertical-align: -0.14em;
+}
 .stop__head:hover .stop__bullet { transform: scale(1.08); }
 
 .stop.is-open .stop__bullet {
@@ -541,6 +601,16 @@ a { color: inherit; }
   color: var(--tier);
 }
 
+.chip--popular {
+  border-color: color-mix(in srgb, var(--t-low) 45%, transparent);
+  color: var(--t-low);
+}
+
+.chip--popular .ico {
+  font-size: 0.9rem;
+  vertical-align: -0.16em;
+}
+
 .stop__tip {
   margin: 1rem 0 0;
   padding-left: 0.85rem;
@@ -632,6 +702,80 @@ a { color: inherit; }
   box-shadow:
     0 0 0 5px color-mix(in srgb, var(--tier-mapa) 28%, transparent),
     0 2px 8px rgba(24, 28, 36, 0.45);
+}
+
+/* Hermana del círculo y no hija: el círculo recorta lo que se le sale. */
+.pin__estrella {
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  color: #f5c518;
+  font-size: 15px;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 1px 3px rgba(24, 28, 36, 0.55);
+  pointer-events: none;
+}
+
+/* Cuadrado y oscuro, para que no se confunda con ninguna parada. */
+.hotel {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 9px;
+  background: var(--night);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(24, 28, 36, 0.5);
+  cursor: pointer;
+}
+
+.hotel .ico { font-size: 19px; }
+
+.leaflet-tooltip.rotulo-hotel {
+  padding: 0.2rem 0.5rem;
+  background: var(--night);
+  color: #fff;
+  font-weight: 500;
+}
+
+.leaflet-tooltip-right::before { border-right-color: var(--rail); }
+
+.popup-hotel .leaflet-popup-content-wrapper,
+.popup-hotel .leaflet-popup-tip {
+  background: rgba(20, 22, 28, 0.97);
+  color: var(--bone);
+  box-shadow: 0 6px 24px rgba(8, 9, 12, 0.45);
+}
+
+.popup-hotel .leaflet-popup-content-wrapper {
+  border: 1px solid var(--rail);
+  border-radius: 10px;
+}
+
+.popup-hotel .leaflet-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0.75rem 0.95rem;
+  font-family: var(--body);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.popup-hotel .leaflet-popup-content strong {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.popup-hotel .leaflet-popup-content span { color: var(--dim); }
+
+.popup-hotel .leaflet-popup-content a {
+  margin-top: 0.45rem;
+  color: var(--bone);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  text-underline-offset: 3px;
 }
 
 .leaflet-container {
@@ -966,12 +1110,19 @@ a { color: inherit; }
     grid-column: 2;
     justify-self: start;
   }
+
+  .capas__boton { padding: 0.4rem 0.65rem; }
   .stop__bullet { top: 0.8rem; }
 
   .galeria__foto { width: 74%; }
 
   .visor__foto { max-height: calc(100dvh - 13rem); }
   .visor__paso { width: 40px; height: 40px; margin-top: -20px; font-size: 1.2rem; }
+}
+
+/* En los teléfonos más angostos el selector no entra al lado de "Lugares". */
+@media (max-width: 380px) {
+  .capas__boton .ico { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

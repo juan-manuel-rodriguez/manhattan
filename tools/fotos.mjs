@@ -145,8 +145,15 @@ async function detalles(titulos) {
   return salida
 }
 
-const lugaresJs = readFileSync(join(raiz, 'data/lugares.js'), 'utf8')
-const { LUGARES } = new Function(`${lugaresJs}; return { LUGARES }`)()
+const cargar = (archivo, nombre) =>
+  new Function(`${readFileSync(join(raiz, 'data', archivo), 'utf8')}; return ${nombre}`)()
+
+// Atracciones y comida comparten fotos.js. En la comida el `wiki` es opcional, y
+// un mismo artículo no se baja dos veces.
+const vistos = new Set()
+const LUGARES = [...cargar('lugares.js', 'LUGARES'), ...cargar('comida.js', 'COMIDA')].filter(
+  (l) => l.wiki && !vistos.has(l.wiki) && vistos.add(l.wiki),
+)
 
 const fotos = {}
 const flojos = []
